@@ -1,4 +1,6 @@
-<h1>this is the index page</h1>
+<div class="listings-bg-img">
+  <h1>this is the index page</h1>
+
 
 <% @listings.each do |listing| %>
 <%= link_to listing_path(listing) do %>
@@ -7,3 +9,4 @@
 </div>
 <% end %>
 <% end %>
+</div>

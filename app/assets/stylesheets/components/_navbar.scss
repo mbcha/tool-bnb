@@ -1,75 +1,80 @@
 /* Main navbar */
-.navbar-wagon {
+.navbar-main {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: transparent;
+  background: rgba(0,0,0,0.4);
   transition: all 0.3s ease;
-  height: 50px;
+  height: 70px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  top: 0;
-  border-width: 0 0 1px;
   position:fixed;
-  right: 0;
-  left: 0;
-  color: white;
+  right:0;
+  left:0;
+  top:0
 }
-
 /* Logo */
 .navbar-main-brand {
-  color: white;
+  height: 30px;
+  color:white;
 }
 
 /* User Avatar */
-.navbar-wagon .avatar {
+.navbar-main .avatar {
   height: 35px;
   width: 35px;
   border-radius: 50%;
+
 }
 
 /* Right section */
-.navbar-wagon-right {
+.navbar-tool-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+#signup {
+  color: orange;
+}
+
 /* Basic navbar item */
-.navbar-wagon-item {
+.navbar-tool-item {
   cursor: pointer;
   padding: 0 20px;
 }
 
 /* Navbar link */
-.navbar-wagon-link {
-  color: white;
+.navbar-tool-link {
   font-size: 14px;
+  color:white;
 }
-.navbar-wagon-link:hover {
+.navbar-tool-link:hover {
   color: #da552f;
   text-decoration: none;
 }
 
 /* Dropdown menu */
-.navbar-wagon-dropdown-menu {
+.navbar-tool-dropdown-menu {
   margin-top: 15px;
-  box-shadow: 1px 1px 4px #E6E6E6;
-  border-color: #E6E6E6;
+  box-shadow: 1px 1px 4px #orange;
+  border-color: orange;
+  background: rgba(0,0,0,0.4);
 }
-.navbar-wagon-dropdown-menu li > a {
+.navbar-tool-dropdown-menu li > a {
   transition: color 0.3s ease;
-  font-weight: lighter !important;
-  color: #999999 !important;
+  font-weight: bold !important;
+  color: white !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
+
 }
-.navbar-wagon-dropdown-menu li > a:hover {
+.navbar-tool-dropdown-menu li > a:hover {
   background: transparent !important;
   color: black !important;
 }
-.navbar-wagon-dropdown-menu:before {
+.navbar-tool-dropdown-menu:before {
   content: ' ';
   height: 10px;
   width: 10px;
