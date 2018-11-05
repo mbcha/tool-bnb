@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2018_11_05_125206) do
   create_table "listings", force: :cascade do |t|
     t.string "category"
     t.text "description"
-    t.integer "price"
+    t.decimal "price"
     t.bigint "users_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
