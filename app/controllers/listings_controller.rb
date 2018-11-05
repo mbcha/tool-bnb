@@ -1,2 +1,49 @@
 class ListingsController < ApplicationController
+  before_action :find_listing, only: [:show, :new, :edit, :destroy]
+
+  def index
+    @listings = Listing.all
+  end
+
+  def show
+  end
+
+  def new
+  end
+
+  def create
+    @listing = Listing.create(listing_params)
+    if @listing.save
+      redirect_to @listing
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    @listing = Listing.update(listing_params)
+    if @listing.save
+      redirect_to @listing
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @listing.destroy
+    redirect_to listings_path
+  end
+
+  private
+
+  def find_listing
+    @listing = Listing.find(params[:id])
+  end
+
+  def listing_params
+    params.require(:listing).permit(:category, :description, :photo, :photo_url, :price)
+  end
 end
