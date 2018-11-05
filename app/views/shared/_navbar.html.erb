@@ -18,7 +18,7 @@
           <li><a href="#">Profile</a></li>
           <li><a href="#">In your Box</a></li>
           <li><a href="#">Your Display</a></li>
-          <li><a href="#">Log Out</a></li>
+          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
         </ul>
       </div>
     </div>
