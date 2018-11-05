@@ -7,13 +7,16 @@ class ListingsController < ApplicationController
   end
 
   def show
+    @listing = Listing.find(params[:id])
   end
 
   def new
+    @listing = Listing.new
   end
 
   def create
     @listing = Listing.create(listing_params)
+    @listing.user = current_user
     if @listing.save
       redirect_to @listing
     else
@@ -45,6 +48,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:category, :description, :photo, :photo_url, :price)
+    params.require(:listing).permit(:category, :description, :price)
   end
 end
