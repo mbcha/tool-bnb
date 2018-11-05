@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2018_11_05_125206) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.string "status"
+    t.string "status", default: "Pending"
     t.decimal "total_price"
     t.bigint "users_id"
     t.bigint "listings_id"
@@ -32,10 +32,10 @@ ActiveRecord::Schema.define(version: 2018_11_05_125206) do
     t.string "category"
     t.text "description"
     t.decimal "price"
-    t.bigint "users_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_listings_on_users_id"
+    t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,5 +54,5 @@ ActiveRecord::Schema.define(version: 2018_11_05_125206) do
 
   add_foreign_key "bookings", "listings", column: "listings_id"
   add_foreign_key "bookings", "users", column: "users_id"
-  add_foreign_key "listings", "users", column: "users_id"
+  add_foreign_key "listings", "users"
 end
