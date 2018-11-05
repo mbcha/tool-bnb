@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2018_11_05_125206) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.string "status", default: "Pending"
+    t.string "status"
     t.decimal "total_price"
     t.bigint "users_id"
     t.bigint "listings_id"
