@@ -1,0 +1,457 @@
+[33mcommit b54440fe57bf11ab360f82375ff4235b0fed6ea3[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Merge: df7a7ee f26b304
+Author: maxime fontana <maximefontana@hotmail.com>
+Date:   Mon Nov 5 17:50:18 2018 +0100
+
+    Merge branch 'master' of github.com:mbcha/tool-bnb
+
+[33mcommit df7a7ee84a1ac43c54ce8cb4e444e501579f95b2[m
+Author: maxime fontana <maximefontana@hotmail.com>
+Date:   Mon Nov 5 17:49:56 2018 +0100
+
+    figuring out which files I want
+
+[33mcommit f26b304378cd418754737edbd8a8874853d60c9e[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: efeedd9 ee69ee2
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 17:34:09 2018 +0100
+
+    Merge branch 'master' of github.com:mbcha/tool-bnb
+
+[33mcommit efeedd95120b3dbb43943df4535c1603e449daa1[m
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 17:33:54 2018 +0100
+
+    test
+
+[33mcommit ee69ee2d5d4e0889fc877c1627626593dc407129[m
+Author: michael mudge <michaeltmudge@gmail.com>
+Date:   Mon Nov 5 17:30:32 2018 +0100
+
+    fixed application controller name
+
+[33mcommit 097dab13a007a1d33d1a1b13dae464f7b3e80c98[m
+Merge: 0f6b36a 8e2f2ef
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 17:18:23 2018 +0100
+
+    Merge branch 'master' of github.com:mbcha/tool-bnb
+
+[33mcommit 0f6b36aeadb2442c7d5f9aa4410c01ac3710735f[m
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 17:18:11 2018 +0100
+
+    Added listing info to index
+
+[33mcommit 8e2f2efb3f87897e4d632c0e0fa191d5163838d3[m
+Merge: 155f87e ce3e531
+Author: Michael Mudge <41555053+mmudge@users.noreply.github.com>
+Date:   Mon Nov 5 16:57:28 2018 +0100
+
+    Merge pull request #18 from mbcha/navbar_styling2
+    
+    Navbar words color and description change
+
+[33mcommit 155f87e6af0a57a2c6573dcd466ef162d61dd4dc[m
+Merge: b028cda 7cbbcfa
+Author: maximefontana <43535870+maximefontana@users.noreply.github.com>
+Date:   Mon Nov 5 16:54:46 2018 +0100
+
+    Merge pull request #17 from mbcha/working-on-making-listings-controller-work
+    
+    added some stuff
+
+[33mcommit 7cbbcfa7771c17193fde6f7f4b265671016c4f58[m
+Merge: 64147dd b028cda
+Author: maximefontana <43535870+maximefontana@users.noreply.github.com>
+Date:   Mon Nov 5 16:54:25 2018 +0100
+
+    Merge branch 'master' into working-on-making-listings-controller-work
+
+[33mcommit 64147ddae842a9491aecbf054586c1285f81ebcd[m[33m ([m[1;31morigin/working-on-making-listings-controller-work[m[33m, [m[1;32mworking-on-making-listings-controller-work[m[33m)[m
+Author: maxime fontana <maximefontana@hotmail.com>
+Date:   Mon Nov 5 16:47:36 2018 +0100
+
+    added some stuff
+
+[33mcommit b028cda37e5b783ce17563f48f1fa2c13e56303f[m
+Merge: 20742ac a4797f0
+Author: mbcha <42776201+mbcha@users.noreply.github.com>
+Date:   Mon Nov 5 16:45:38 2018 +0100
+
+    Merge pull request #16 from mbcha/styling-devise-forms
+    
+    Styling devise forms
+
+[33mcommit a4797f0feb1c4b1beb76dfd254efdf78ac3aa611[m[33m ([m[1;31morigin/styling-devise-forms[m[33m)[m
+Author: michael mudge <michaeltmudge@gmail.com>
+Date:   Mon Nov 5 16:39:41 2018 +0100
+
+    added backgroujd image and formwhite background
+
+[33mcommit 20742ac9dafc7286ccf3fa6c949dbf4a97a91b9d[m
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 16:39:27 2018 +0100
+
+    fixed error message
+
+[33mcommit ce3e53156a8220b48bb88582f535cd8b13144bb3[m[33m ([m[1;31morigin/navbar_styling2[m[33m)[m
+Author: Dion Shahini <dion.shahini@googlemail.com>
+Date:   Mon Nov 5 16:27:52 2018 +0100
+
+    Navbar words color and description change
+
+[33mcommit 4b42c1bd4b22fd203865de2257a33a9dc0e35ace[m
+Merge: 28842af 5bf6599
+Author: mbcha <42776201+mbcha@users.noreply.github.com>
+Date:   Mon Nov 5 16:27:23 2018 +0100
+
+    Merge pull request #15 from mbcha/create-listing-show-page
+    
+    Added listing show page
+
+[33mcommit 5bf659961cf764131dcc223c99ff294f4d990bdd[m[33m ([m[1;31morigin/create-listing-show-page[m[33m)[m
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 16:25:53 2018 +0100
+
+    Added listing show page
+
+[33mcommit 8090137ec3d31bd349c6d1404e210ec34c428a1f[m
+Author: michael mudge <michaeltmudge@gmail.com>
+Date:   Mon Nov 5 16:00:48 2018 +0100
+
+    centered all the log in forms
+
+[33mcommit 28842af0dddb1945bd64d56950ccc271cc557de2[m
+Merge: 40c5af6 2007038
+Author: maximefontana <43535870+maximefontana@users.noreply.github.com>
+Date:   Mon Nov 5 16:00:11 2018 +0100
+
+    Merge pull request #14 from mbcha/update-users-controller
+    
+    Update users controller
+
+[33mcommit 20070385c1abb33124e15e4a3cf1555f70c3cac4[m
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 15:59:17 2018 +0100
+
+    updated user controller
+
+[33mcommit 25086c47edf085e2b708ec973260c86645fe319c[m
+Merge: 56e8ce7 40c5af6
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 15:50:23 2018 +0100
+
+    Merge branch 'master' of github.com:mbcha/tool-bnb
+
+[33mcommit 56e8ce764697c2e9eb49ad5a3844fb0f067923d8[m
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 15:50:10 2018 +0100
+
+    Removed signup requirement from home page
+
+[33mcommit 40c5af663914a1fae016d6ea0affdfc79708b279[m
+Merge: 64a6bcd c4fe93d
+Author: Dion Shahini <43046043+DionSha@users.noreply.github.com>
+Date:   Mon Nov 5 15:42:36 2018 +0100
+
+    Merge pull request #13 from mbcha/navbar-styling
+    
+    implemented navbar in the layout
+
+[33mcommit c4fe93d0fabfdbd74ec64c0e5d5d7d3d141d0d62[m[33m ([m[1;31morigin/navbar-styling[m[33m)[m
+Author: Dion Shahini <dion.shahini@googlemail.com>
+Date:   Mon Nov 5 15:41:22 2018 +0100
+
+    implemented navbar in the layout
+
+[33mcommit 64a6bcdde6d57b87c48260ddd97b079a36267697[m
+Merge: 9366a29 87fdc2d
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 15:32:25 2018 +0100
+
+    Merge branch 'master' of github.com:mbcha/tool-bnb
+
+[33mcommit 9366a29d4e43d6d321906eab3118868c8e50c9b8[m
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 15:32:13 2018 +0100
+
+    added device routes
+
+[33mcommit 87fdc2db5f50437535e92c0da6c5884243fe6b9a[m
+Merge: f1c154f f79532b
+Author: Michael Mudge <41555053+mmudge@users.noreply.github.com>
+Date:   Mon Nov 5 15:19:50 2018 +0100
+
+    Merge pull request #12 from mbcha/navbar-implementation
+    
+    navbar implementation/skeleton
+
+[33mcommit f79532bcd3d83ff36c092b8b80d66a56f03f5eea[m[33m ([m[1;31morigin/navbar-implementation[m[33m)[m
+Merge: 46d5f53 f1c154f
+Author: Michael Mudge <41555053+mmudge@users.noreply.github.com>
+Date:   Mon Nov 5 15:19:41 2018 +0100
+
+    Merge branch 'master' into navbar-implementation
+
+[33mcommit 46d5f539c08f0754a42e1c65701265de3542d001[m
+Author: Dion Shahini <dion.shahini@googlemail.com>
+Date:   Mon Nov 5 15:14:27 2018 +0100
+
+    navbar implementation/skeleton
+
+[33mcommit f1c154f06eba8a6ea2cc6fa993fec5566ddac609[m
+Merge: 437b3d6 41af7d9
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 15:09:45 2018 +0100
+
+    Merge branch 'master' of github.com:mbcha/tool-bnb
+
+[33mcommit 437b3d68584bda8809429aa51b35a70e2323cba7[m
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 15:09:32 2018 +0100
+
+    fixing routes
+
+[33mcommit 41af7d947232421fb2f62350ca7834151cdc04ec[m
+Author: maxime fontana <maximefontana@hotmail.com>
+Date:   Mon Nov 5 14:59:01 2018 +0100
+
+    syntax line 12
+
+[33mcommit 42d2c7e2d0816a2f226cc8aa164024ca8c87020b[m
+Merge: 8d2ee1e df0d01f
+Author: maximefontana <43535870+maximefontana@users.noreply.github.com>
+Date:   Mon Nov 5 14:57:19 2018 +0100
+
+    Merge pull request #11 from mbcha/create-booking-controller
+    
+    new, create methods in controller
+
+[33mcommit df0d01fb4afc30dcf186f7120a603146e911435a[m
+Merge: 39f5a67 c50e845
+Author: maximefontana <43535870+maximefontana@users.noreply.github.com>
+Date:   Mon Nov 5 14:57:11 2018 +0100
+
+    Merge branch 'master' into create-booking-controller
+
+[33mcommit 8d2ee1eaf82b0a1e37a7e5faece897d292715126[m
+Merge: 61d81f7 c50e845
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 14:57:00 2018 +0100
+
+    Merge branch 'master' of github.com:mbcha/tool-bnb
+
+[33mcommit 61d81f7895d8a4caf09a50d4e5a5fdf48dae40c3[m
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 14:56:40 2018 +0100
+
+    Changed files name
+
+[33mcommit c50e84501bf475155e1dc9f05e17b4d2ff490a53[m
+Merge: 0b672e4 5b9b169
+Author: maximefontana <43535870+maximefontana@users.noreply.github.com>
+Date:   Mon Nov 5 14:55:48 2018 +0100
+
+    Merge pull request #10 from mbcha/banner-search-feature
+    
+    changed the red color and the banner form section
+
+[33mcommit 5b9b16955e63c5e79bf7d7108cb89b4386a46470[m
+Merge: f3167e9 0b672e4
+Author: Dion Shahini <43046043+DionSha@users.noreply.github.com>
+Date:   Mon Nov 5 14:54:16 2018 +0100
+
+    Merge branch 'master' into banner-search-feature
+
+[33mcommit 39f5a675658dab0bf194ef79608ac63daa7e5ac7[m
+Author: maxime fontana <maximefontana@hotmail.com>
+Date:   Mon Nov 5 14:53:51 2018 +0100
+
+    new, create methods in controller
+
+[33mcommit f3167e95a2ede21179cdfff10b8bd6e5db9ef0b5[m
+Author: michael mudge <michaeltmudge@gmail.com>
+Date:   Mon Nov 5 14:52:04 2018 +0100
+
+    changed the red color and the banner form section
+
+[33mcommit 0b672e4c8c3160c0538e2cb5b9cb4d6d9af3e08d[m
+Merge: 1c77708 0fc8a60
+Author: mbcha <42776201+mbcha@users.noreply.github.com>
+Date:   Mon Nov 5 14:52:02 2018 +0100
+
+    Merge pull request #9 from mbcha/update-listings-controller
+    
+    Updated listings controller
+
+[33mcommit 0fc8a60e76dcb6ff5b24b5fc4453ea6cae02e953[m[33m ([m[1;31morigin/update-listings-controller[m[33m)[m
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 14:50:58 2018 +0100
+
+    Updated listings controller
+
+[33mcommit 1c77708fc4fdd0d1ccbcdd0916b517746d06224b[m
+Merge: 65c025f 620b475
+Author: Michael Mudge <41555053+mmudge@users.noreply.github.com>
+Date:   Mon Nov 5 14:46:10 2018 +0100
+
+    Merge pull request #8 from mbcha/new-navbar
+    
+    You spelled color wrong the the code looks great!
+
+[33mcommit 620b4752a310a1488fb629db6b7b6fe38279d7d1[m
+Author: Dion Shahini <dion.shahini@googlemail.com>
+Date:   Mon Nov 5 14:43:51 2018 +0100
+
+    Colour update for the call to actions
+
+[33mcommit 65c025f14dfa6c7337faf198c9e53f63ac0e4db8[m
+Merge: 4aeb0c8 4ec09fe
+Author: mbcha <42776201+mbcha@users.noreply.github.com>
+Date:   Mon Nov 5 14:34:51 2018 +0100
+
+    Merge pull request #7 from mbcha/create-controllers
+    
+    Added controllers
+
+[33mcommit 4ec09feeb7e8120cc8f08729b38505a15dcf5da3[m[33m ([m[1;31morigin/create-controllers[m[33m)[m
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 14:34:04 2018 +0100
+
+    Added controllers
+
+[33mcommit 4aeb0c8c283ce76735ed871b66e5feba9ac34c7c[m
+Merge: d797fee e86f009
+Author: maximefontana <43535870+maximefontana@users.noreply.github.com>
+Date:   Mon Nov 5 14:28:50 2018 +0100
+
+    Merge pull request #6 from mbcha/update-routes
+    
+    Added routes
+
+[33mcommit d797fee9c155db253b1a8d22aa91542fbd11b1f0[m
+Merge: 143ca04 ee11778
+Author: Dion Shahini <43046043+DionSha@users.noreply.github.com>
+Date:   Mon Nov 5 14:28:25 2018 +0100
+
+    Merge pull request #5 from mbcha/views/shared
+    
+    Mike and i are now able to work in a shared folder
+
+[33mcommit e86f009db7226802e1a4b6f0c67fec0cf342b156[m[33m ([m[1;31morigin/update-routes[m[33m)[m
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 14:27:50 2018 +0100
+
+    Added routes
+
+[33mcommit ee1177870dc432311e5b3711bc1549b3c9920f46[m
+Author: michael mudge <michaeltmudge@gmail.com>
+Date:   Mon Nov 5 14:25:55 2018 +0100
+
+    added shared folder in views and rendered banner on pages/home
+
+[33mcommit 143ca044655a1e94b68aaa916a94743e4f92343d[m
+Merge: 9b0594e 1352da3
+Author: Dion Shahini <43046043+DionSha@users.noreply.github.com>
+Date:   Mon Nov 5 14:16:47 2018 +0100
+
+    Merge pull request #4 from mbcha/home-page-design
+    
+    Added background image and CSS
+
+[33mcommit 1352da3ed85d12057d2053555acceff7dda95e2c[m
+Merge: 98739bf 9b0594e
+Author: Dion Shahini <43046043+DionSha@users.noreply.github.com>
+Date:   Mon Nov 5 14:15:00 2018 +0100
+
+    Merge branch 'master' into home-page-design
+
+[33mcommit 9b0594ef893b2cd081486b7a428b561433ff2c1a[m
+Author: maxime fontana <maximefontana@hotmail.com>
+Date:   Mon Nov 5 14:10:14 2018 +0100
+
+    added validations to booking model
+
+[33mcommit 98739bf328b47441b9ea411ede68de45de2b3f51[m
+Author: michael mudge <michaeltmudge@gmail.com>
+Date:   Mon Nov 5 14:06:40 2018 +0100
+
+    Added background image and CSS
+
+[33mcommit d7298cb4af53cc41deaa1a376c168483072871fc[m
+Merge: 12c87b6 76c472c
+Author: maximefontana <43535870+maximefontana@users.noreply.github.com>
+Date:   Mon Nov 5 14:00:09 2018 +0100
+
+    Merge pull request #3 from mbcha/adding-booking-model
+    
+    Adding booking model
+
+[33mcommit 76c472cf1cf0d8553a7331684122dc04c7ab3aca[m
+Merge: dcb6905 12c87b6
+Author: maximefontana <43535870+maximefontana@users.noreply.github.com>
+Date:   Mon Nov 5 13:58:38 2018 +0100
+
+    Merge pull request #2 from mbcha/master
+    
+    added booking model
+
+[33mcommit dcb6905bc549f76c60b83e521e8b941aa4ec9886[m
+Author: maxime fontana <maximefontana@hotmail.com>
+Date:   Mon Nov 5 13:57:33 2018 +0100
+
+    created booking model
+
+[33mcommit 12c87b6ba601bb829242f14ebf3757b52fe42f01[m
+Merge: bf778fd 0aa94dc
+Author: maximefontana <43535870+maximefontana@users.noreply.github.com>
+Date:   Mon Nov 5 13:56:58 2018 +0100
+
+    Merge pull request #1 from mbcha/update-models
+    
+    Added validations on user & listing models
+
+[33mcommit 0aa94dc2ab72d9f751d0397ea55a6cd0d1894fb2[m[33m ([m[1;31morigin/update-models[m[33m)[m
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 13:51:18 2018 +0100
+
+    Added validations on user & listing models
+
+[33mcommit bf778fd5503d6b0806b00f25964991e654725d10[m
+Merge: 9e22fa9 004a09b
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 13:36:08 2018 +0100
+
+    Merge branch 'master' of github.com:mbcha/tool-bnb
+
+[33mcommit 9e22fa9c61c15c2de1ed7540d02ceee5e0a1468b[m
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 13:32:04 2018 +0100
+
+    added listings model
+
+[33mcommit 004a09bc7a80cb09fed640b44d18833a6c344d8e[m
+Merge: 313025b ff57e9a
+Author: maxime fontana <maximefontana@hotmail.com>
+Date:   Mon Nov 5 13:23:50 2018 +0100
+
+    Merge branch 'master' of github.com:mbcha/tool-bnb
+
+[33mcommit 313025b66a17f18cc211ca7f425861c13d35f630[m
+Author: maxime fontana <maximefontana@hotmail.com>
+Date:   Mon Nov 5 13:23:25 2018 +0100
+
+    added gitignore
+
+[33mcommit ff57e9a72466ba5509678d65808658eef8755310[m
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 13:20:46 2018 +0100
+
+    Added user model
+
+[33mcommit 867f3f33e4f705c6e9fb7edd61d3f94d9d9441a6[m
+Author: Bella Cha <cha.maria.belen@gmail.com>
+Date:   Mon Nov 5 11:42:49 2018 +0100
+
+    Initial commit with minimal template from https://github.com/lewagon/rails-templates
