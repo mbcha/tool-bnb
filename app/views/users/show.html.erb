@@ -13,7 +13,7 @@ Location: <%= @user.location %>
 <% end %>
 
 <h3>Add a new listing</h3>
-<%= simple_form_for(listings_path) do |f| %>
+<%= simple_form_for(Listing.new) do |f| %>
   <%= f.input :category %>
   <%= f.input :description %>
   <%= f.input :price %>
