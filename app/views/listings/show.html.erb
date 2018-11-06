@@ -1,10 +1,1 @@
-<div class="listings-bg-img">
-
-  <h1>This is a testing page boiyo</h1>
-
-  <%= @listing.category %>
-  <%= @listing.description %>
-  <% if policy(listing).update? %>
-    <%= link_to 'Edit', edit_listing_path(listing) %>
-  <% end %>
-</div>
+<%= render 'shared/showcard' %>
