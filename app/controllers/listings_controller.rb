@@ -3,7 +3,7 @@ class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @listings = Listing.all
+    @listings = policy_scope(Listing)
   end
 
   def show
@@ -17,6 +17,7 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.create(listing_params)
     @listing.user = current_user
+    authorize @listing
     if @listing.save
       redirect_to @listing
     else
@@ -29,6 +30,7 @@ class ListingsController < ApplicationController
 
   def update
     @listing = Listing.update(listing_params)
+    authorize @listing
     if @listing.save
       redirect_to @listing
     else
@@ -45,6 +47,7 @@ class ListingsController < ApplicationController
 
   def find_listing
     @listing = Listing.find(params[:id])
+    authorize @listing
   end
 
   def listing_params
