@@ -1,12 +1,89 @@
 .listings-bg-img {
-  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+  width: 100%;
+  height: 100%;
   background-size: cover;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+  background-attachment: fixed;
 }
 
+.listings-container{
+  align-items: center;
+  justify-content: center;
+  padding-top: 10%;
+  text-align: center;
+  margin: 0px 40px;
+}
+
+.listings-container h1 {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  border-bottom: solid 2px white
+}
+
+.listings-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.listings-card {
+  color: white;
+  background-color: white;
+  padding: 50px;
+  margin: 15px 15px;
+  width: 350px;
+  height: 200px;
+  position: relative;
+  border-radius: 4px;
+  box-shadow: 5px 5px 5px rgba(0, 33, 57, 0.8);
+}
+
+.listings-card-category {
+  position: absolute;
+  top: 10%;
+  left: 7%;
+  font-size: 25px;
+  color: black;
+}
+
+.listings-card-location {
+  position: absolute;
+  bottom: 10%;
+  left: 7%;
+  font-weight: lighter;
+  color: black;
+}
+
+.listings-card-price {
+  position: absolute;
+  top: 10%;
+  right: 7%;
+  color: black;
+}
+
+.listings-card-description {
+  position: absolute;
+  top: 34%;
+  right: 44%;
+  color: black;
+}
+
+.listings-card-btn {
+  color: white;
+  position: absolute;
+  right: 7%;
+  bottom: 10%;
+  padding: 5px 15px;
+  border-radius: 3px;
+  background-color: $red;
+  text-decoration: none;
+}
+
+.listings-card-btn:hover {
+  color: white;
+  background-color: #9A031D;
+  text-decoration: none;
+}
 
 

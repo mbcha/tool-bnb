@@ -1,6 +1,25 @@
+<h2>My Details</h2>
+
+Name: <%= @user.name %>
+Location: <%= @user.location %>
+
+<%= link_to "Edit my Details", edit_user_registration_path %>
+
 <h2>My Listings</h2>
 
 <% @user.listings.each do |listing| %>
-  <p><%= listing.category %> - <%= listing.description %></p>
+  <p><%= listing.category %> - <%= listing.description %> - <%= listing.price %></p>
+  <%= link_to "Edit", edit_listing_path(listing) %>
 <% end %>
+
+<h3>Add a new listing</h3>
+<%= simple_form_for(Listing.new) do |f| %>
+  <%= f.input :category %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.submit "Add"%>
+<% end %>
+
+
+<h2>My Bookings</h2>
 
