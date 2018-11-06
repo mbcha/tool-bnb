@@ -8,8 +8,7 @@ Location: <%= @user.location %>
 <h2>My Listings</h2>
 
 <% @user.listings.each do |listing| %>
-  <p><%= listing.category %> - <%= listing.description %> - <%= listing.price %></p>
-  <%= link_to "Edit", edit_listing_path(listing) %>
+  <p><%= listing.category %> - <%= listing.description %></p>
 <% end %>
 
 <h3>Add a new listing</h3>
