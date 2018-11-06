@@ -13,6 +13,10 @@ class ListingPolicy < ApplicationPolicy
     true
   end
 
+  def edit
+    update?
+  end
+
   def update?
     is_user_owner_admin?
   end
@@ -24,6 +28,6 @@ class ListingPolicy < ApplicationPolicy
   private
 
   def is_user_owner_admin?
-    user == record.user
+    user == record || user.admin?
   end
 end

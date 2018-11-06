@@ -4,7 +4,21 @@
 
   <%= @listing.category %>
   <%= @listing.description %>
-  <% if policy(listing).update? %>
-    <%= link_to 'Edit', edit_listing_path(listing) %>
+  <%= @listing.price %>
+
+  <% if policy(@listing).update? %>
+  <div class="edit-btn btn btn-danger">
+    Edit
+  </div>
   <% end %>
+
+  <div class="edit-form">
+    <%= simple_form_for(@listing) do |f| %>
+    <%= f.input :category %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.submit %>
+    <% end %>
+
+  </div>
 </div>

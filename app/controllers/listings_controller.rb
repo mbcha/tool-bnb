@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  before_action :find_listing, only: [:show, :new, :edit, :destroy]
+  before_action :find_listing, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -8,9 +8,6 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
-  end
-
-  def new
   end
 
   def create
@@ -28,8 +25,8 @@ class ListingsController < ApplicationController
   end
 
   def update
-    @listing = Listing.update(listing_params)
     authorize @listing
+    @listing.update(listing_params)
     if @listing.save
       redirect_to @listing
     else
