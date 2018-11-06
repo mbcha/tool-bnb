@@ -1,9 +1,36 @@
 .listings-bg-img {
-  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+  width: 100%;
+  height: 100%;
   background-size: cover;
-  height: 100vh;
-  display: flex;
+  background-attachment: fixed;
+}
+
+.listings-container{
   align-items: center;
   justify-content: center;
+  padding-top: 10%;
+  text-align: center;
+  margin: 0px 40px;
+}
+
+.listings-container h1 {
+  color: white;
+}
+
+.listings-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.listings-card {
+  color: white;
+  background-color: white;
+  padding: 50px;
+  margin: 15px 15px;
+  max-width: 24%;
+  opacity: 0.9;
+  position: relative;
 }
 
