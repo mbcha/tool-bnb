@@ -2,8 +2,36 @@
   background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
   background-size: cover;
   height: 100vh;
+}
+
+.listings-container {
+  width: 85vh;
+  margin: 0 auto;
+  align-items: center;
+  margin-top: 30%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.listing-cards {
+  background-color: black;
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin: 15px;
+}
+
+
+.listing-cards p {
+  color: white;
+}
+
+
+.listings-container h1 {
+  color: white;
 }
 

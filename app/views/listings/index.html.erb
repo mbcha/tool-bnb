@@ -1,12 +1,19 @@
 <div class="listings-bg-img">
-  <h1>this is the index page</h1>
 
+  <div class="listings-container">
+    <h1>List of Tools:</h1>
 
-<% @listings.each do |listing| %>
-<%= link_to listing_path(listing) do %>
-<div class="card">
-  <li>Tool type: <%= listing.category %>, Location: <%= listing.user.location %></li>
+    <div class="row">
+      <% @listings.each do |listing| %>
+      <div class = "col-xs-12 col-sm-4">
+        <div class ="listing-cards">
+          <%= link_to listing_path(listing) do %>
+          <p>Tool type: <%= listing.category %>, Location: <%= listing.user.location %></p>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>
-<% end %>
-<% end %>
-</div>
+
