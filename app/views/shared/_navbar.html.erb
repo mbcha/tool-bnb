@@ -6,22 +6,23 @@
 
   <!-- Right Navigation -->
   <div class="navbar-tool-right hidden-xs hidden-sm">
-
-    <a href="/users/sign_up" class="navbar-tool-item navbar-tool-link" id="signup">Signup</a>
-    <a href="/users/login" class="navbar-tool-item navbar-tool-link">Login</a>
-
+    <% if user_signed_in? %>
     <!-- Profile picture with dropdown list -->
     <div class="navbar-tool-item">
       <div class="dropdown">
         <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-tool-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-tool-dropdown-menu">
-          <li><a href="#">Profile</a></li>
+          <li><%= link_to "Profile", user_path(current_user) %></li>
           <li><a href="#">In your Box</a></li>
           <li><a href="#">Your Display</a></li>
           <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
         </ul>
       </div>
     </div>
+    <% else %>
+    <a href="/users/sign_up" class="navbar-tool-item navbar-tool-link" id="signup">Signup</a>
+    <a href="/users/login" class="navbar-tool-item navbar-tool-link">Login</a>
+    <% end %>
   </div>
 
   <!-- Dropdown appearing on mobile only -->
