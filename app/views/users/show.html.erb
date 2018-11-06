@@ -4,10 +4,3 @@
   <p><%= listing.category %> - <%= listing.description %></p>
 <% end %>
 
-<%= simple_form_for([@user, Listing.new]) do |f| %>
-  <%= f.input :category %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.submit %>
-<% end %>
-
