@@ -9,4 +9,10 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to home_root
   end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :location)
+  end
 end
