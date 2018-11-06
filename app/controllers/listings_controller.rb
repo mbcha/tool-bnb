@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  before_action :find_listing, only: [:show, :new, :edit, :destroy]
+  before_action :find_listing, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -10,16 +10,12 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
   end
 
-  def new
-    @listing = Listing.new
-  end
-
   def create
-    @listing = Listing.create!(listing_params)
+    @listing = Listing.create(listing_params)
     @listing.user = current_user
     authorize @listing
-    if @listing.save!
-      redirect_to @listing
+    if @listing.save
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -29,8 +25,8 @@ class ListingsController < ApplicationController
   end
 
   def update
-    @listing = Listing.update(listing_params)
     authorize @listing
+    @listing.update(listing_params)
     if @listing.save
       redirect_to @listing
     else
@@ -51,6 +47,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:category, :description, :price)
+    params.require(:listing).permit(:category, :description, :price, :user_id)
   end
 end
