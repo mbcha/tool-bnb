@@ -9,5 +9,8 @@ Rails.application.routes.draw do
 
   as :user do
     get 'users', :to => 'users#show', :as => :user_root # Rails 3
+    post 'users/:id', to: 'users#show'
   end
+
+
 end

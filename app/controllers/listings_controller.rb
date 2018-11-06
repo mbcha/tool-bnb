@@ -15,10 +15,10 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.create(listing_params)
+    @listing = Listing.create!(listing_params)
     @listing.user = current_user
     authorize @listing
-    if @listing.save
+    if @listing.save!
       redirect_to @listing
     else
       render :new
