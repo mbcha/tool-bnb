@@ -2,13 +2,6 @@
 
   <div class="listing-show-main-container">
 
-    <div class="listing-show-pic">
-      <% if @listing.photo == nil %>
-      <img src="https://images.pexels.com/photos/1409215/pexels-photo-1409215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Tool photo">
-      <% else %>
-      <img src="<%= cl_image_tag @listing.photo %>" alt="Tool">
-      <% end %>
-    </div>
     <div class="listing-show-info">
       <h3><%= @listing.category %> </h3>
       <div id='showcard-content' style="overflow-y: scroll; height:100px width:100px" >
@@ -24,11 +17,52 @@
       <% end %>
     </div>
 
+    <div class="listing-show-pic hidden">
+      <% if @listing.photo == nil %>
+      <img src="https://images.pexels.com/photos/1409215/pexels-photo-1409215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Tool photo">
+      <% else %>
+      <img src="<%= cl_image_tag @listing.photo %>" alt="Tool">
+      <% end %>
+    </div>
+
+
+
+
+
+    <div class="listing-show-form">
+      <div class="booking-create-form">
+        <div class="book-form">
+          <%= simple_form_for([@listing, @booking]) do |f| %>
+          <%= f.input :start_date, input_html: { id: 'start-date', onClick: "calcPrice(#{@listing.price})" } %>
+          <%= f.input :end_date, input_html: { id: 'end-date', onClick: "calcPrice(#{@listing.price})" } %>
+          <%= f.submit data: {confirm: @booking_message } %>
+          <a href="#" class="cancel-button-booking btn btn-primary">Cancel</a>
+          <% end %>
+          <p id="booking-price">Total Price</p>
+        </div>
+      </div>
+
+      <div class="booking-edit-form">
+        <div class="edit-form hidden">
+          <%= simple_form_for(@listing) do |f| %>
+          <%= f.input :category %>
+          <%= f.input :description %>
+          <%= f.input :price %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.submit %>
+          <a href="#" class="cancel-button-edit btn btn-primary">Cancel</a>
+          <% end %>
+        </div>
+      </div>
+    </div>
 
   </div>
 
-  <div class="listings-bg-img">
-    <script>
+  </div>
+
+
+      <script>
       function calcPrice(price) {
         const startDate1 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(1i)]"]')[0].value;
         const startDate2 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(2i)]"]')[0].value;
@@ -55,6 +89,7 @@
         document.getElementById("booking-price").innerHTML = "Total Price: " + totalHours*price;
       }
     </script>
+
     <div class="booking-create-form">
       <div class="new-booking-form book-form hidden">
         <%= simple_form_for([@listing, @booking]) do |f| %>
@@ -81,4 +116,5 @@
       </div>
     </div>
   </div>
+
 </div>
