@@ -48,7 +48,7 @@ function changeTabs() {
       firstTab.classList.remove('active');
       userDetails.classList.add('hidden');
       secondTab.classList.add('active');
-      userListings.classList.toggle('hidden')
+      userListings.classList.toggle('hidden');
       lastTab.classList.remove('active');
       userBookings.classList.add('hidden');
       addForm.classList.toggle('hidden');
@@ -57,3 +57,36 @@ function changeTabs() {
 };
 
 export { changeTabs };
+
+function openForms() {
+  const editButton = document.querySelector('.edit-button');
+  const bookButton = document.querySelector('.book-button');
+  const bookingForm = document.querySelector('.book-form');
+  const editForm = document.querySelector('.edit-form');
+  const cancelButtonEdit = document.querySelector('.cancel-button-edit');
+  const cancelButtonBook = document.querySelector('.cancel-button-booking');
+
+  if (editButton) {
+    editButton.addEventListener('click', (event) => {
+      editButton.classList.add('hidden');
+      editForm.classList.remove('hidden');
+    });
+    cancelButtonEdit.addEventListener('click', (event) => {
+      editButton.classList.remove('hidden');
+      editForm.classList.add('hidden');
+    });
+  }
+
+  if (bookButton) {
+    bookButton.addEventListener('click', (event) => {
+      bookButton.classList.add('hidden');
+      bookingForm.classList.remove('hidden');
+    });
+    cancelButtonBook.addEventListener('click', (event) => {
+      bookButton.classList.remove('hidden');
+      bookingForm.classList.add('hidden');
+    });
+  }
+}
+
+export { openForms };

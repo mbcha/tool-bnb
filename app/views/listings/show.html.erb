@@ -21,18 +21,6 @@
       const endDate4 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(4i)]"]')[0].value;
       const endDate5 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(5i)]"]')[0].value;
 
-      console.log(startDate1);
-      console.log(startDate2);
-      console.log(startDate3);
-      console.log(startDate4);
-      console.log(startDate5);
-
-      console.log(endDate1);
-      console.log(endDate2);
-      console.log(endDate3);
-      console.log(endDate4);
-      console.log(endDate5);
-
       const totalYear = endDate1 - startDate1;
       const totalMonth = endDate2 - startDate2;
       const totalDay = endDate3 - startDate3;
@@ -41,15 +29,6 @@
 
       const totalHours = (totalYear*12*30*24) + (totalMonth*30*24) + (totalDay*24) + (totalHour) + (totalMin/60);
 
-      console.log(totalYear);
-      console.log(totalMonth);
-      console.log(totalDay);
-      console.log(totalHour);
-      console.log(totalMin);
-      console.log('-----');
-      console.log(price);
-      console.log(totalHours);
-      console.log(totalHours*price);
       document.getElementById("booking-price").innerHTML = totalHours*price;
     }
   </script>
@@ -82,4 +61,3 @@
   </div>
   <% end %>
 </div>
-
