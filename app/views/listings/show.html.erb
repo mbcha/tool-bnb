@@ -17,7 +17,7 @@
         </div>
         <p> 250€ </p>
         <% if current_user && policy(@booking).create? %>
-        <a href="" class="book-button">Book</a>
+        <a href="#" class="book-button">Book</a>
         <% end %>
         <% if current_user && policy(@listing).update? %>
         <a href="#" class="edit-button">Edit</a>
