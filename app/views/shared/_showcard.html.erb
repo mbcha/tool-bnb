@@ -3,12 +3,12 @@
     <div class="row">
       <div class="col-xs-4">
         <% if @listing.photo == nil %>
-        <img src="" alt="Tool photo">
+        <img src="https://images.pexels.com/photos/1409215/pexels-photo-1409215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Tool photo">
         <% else %>
-        <img src="<%= cl_image_tag @listing.photo %>">
+        <img src="<%= cl_image_tag @listing.photo %>" alt="Tool">
         <% end %>
-
       </div>
+
       <div class="col-xs-4">
         <h3><%= @listing.category %> </h3>
         <div id='showcard-content' style="overflow-y: scroll; height:100px;">
@@ -17,47 +17,67 @@
         </div>
         <p> 250€ </p>
         <% if current_user && policy(@booking).create? %>
-        <a class="book-button">Book</a>
+        <a href="#" class="book-button">Book</a>
         <% end %>
         <% if current_user && policy(@listing).update? %>
-        <div class="edit-button">
-          <% end %>
-        </div>
+        <a href="#" class="edit-button">Edit</a>
+        <% end %>
       </div>
     </div>
   </div>
 
-<!-- function openForm() {
- divocument.getElementById("book-form").style.display = " block"; %>
- }
+  <div class="listings-bg-img">
+    <script>
+      function calcPrice(price) {
+        const startDate1 = document.getElementsByName('booking[start_date(1i)]')[0].value;
+        const startDate2 = document.getElementsByName('booking[start_date(2i)]')[0].value;
+        const startDate3 = document.getElementsByName('booking[start_date(3i)]')[0].value;
+        const startDate4 = document.getElementsByName('booking[start_date(4i)]')[0].value;
+        const startDate5 = document.getElementsByName('booking[start_date(5i)]')[0].value;
 
-function openForm() { %>
-divocument.getElementById("book-form").style.display = " none"; %>
-}%>
--->
-<% if current_user && policy(@booking).create? %>
-<div class="book-form hidden" id='book-form'>
-  <%= simple_form_for([@listing, @booking]) do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit data: {confirm: @booking_message }, input_html: {id:"submit-button"}%>
-  <% end %>
+        const endDate1 = document.getElementsByName('booking[end_date(1i)]')[0].value;
+        const endDate2 = document.getElementsByName('booking[end_date(2i)]')[0].value;
+        const endDate3 = document.getElementsByName('booking[end_date(3i)]')[0].value;
+        const endDate4 = document.getElementsByName('booking[end_date(4i)]')[0].value;
+        const endDate5 = document.getElementsByName('booking[end_date(5i)]')[0].value;
+
+
+        const totalYear = endDate1 - startDate1;
+        const totalMonth = endDate2 - startDate2;
+        const totalDay = endDate3 - startDate3;
+        const totalHour = endDate4 - startDate4;
+        const totalMin = endDate5 - startDate5;
+
+        const totalHours = (totalYear*12*30*24) + (totalMonth*30*24) + (totalDay*24) + (totalHour) + (totalMin/60);
+
+        console.log(totalHours*price);
+        document.getElementById("booking-price").innerHTML = totalHours*price;
+      }
+    </script>
+    <div class="booking-create-form">
+      <div class="book-form hidden">
+        <%= simple_form_for([@listing, @booking]) do |f| %>
+        <%= f.input :start_date, input_html: { id: 'start-date', onClick: "calcPrice(#{@listing.price})" } %>
+        <%= f.input :end_date, input_html: { id: 'end-date', onClick: "calcPrice(#{@listing.price})" } %>
+        <%= f.submit data: {confirm: @booking_message } %>
+        <a href="#" class="cancel-button-booking btn btn-primary">Cancel</a>
+        <% end %>
+        <p id="booking-price">Total Price</p>
+      </div>
+    </div>
+
+    <div class="booking-edit-form">
+      <div class="edit-form hidden">
+        <%= simple_form_for(@listing) do |f| %>
+        <%= f.input :category %>
+        <%= f.input :description %>
+        <%= f.input :price %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.submit %>
+        <a href="#" class="cancel-button-edit btn btn-primary">Cancel</a>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-<% end %>
-
-
-<% if current_user && policy(@listing).update? %>
-<div class="edit-button">
-  Edit
-</div>
-
-<div class="edit-form hidden" id='edit-form'>
-  <%= simple_form_for(@listing) do |f| %>
-  <%= f.input :category %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.submit %>
-  <% end %>
-</div>
-<% end %>
-
