@@ -65,15 +65,18 @@ function openForms() {
   const editForm = document.querySelector('.edit-form');
   const cancelButtonEdit = document.querySelector('.cancel-button-edit');
   const cancelButtonBook = document.querySelector('.cancel-button-booking');
+  const listingPhoto = document.querySelector('.listing-show-pic')
 
   if (editButton) {
     editButton.addEventListener('click', (event) => {
       editButton.classList.add('hidden');
       editForm.classList.remove('hidden');
+      listingPhoto.classList.add('hidden');
     });
     cancelButtonEdit.addEventListener('click', (event) => {
       editButton.classList.remove('hidden');
       editForm.classList.add('hidden');
+      listingPhoto.classList.remove('hidden');
     });
   }
 
@@ -81,10 +84,12 @@ function openForms() {
     bookButton.addEventListener('click', (event) => {
       bookButton.classList.add('hidden');
       bookingForm.classList.remove('hidden');
+      listingPhoto.classList.add('hidden');
     });
     cancelButtonBook.addEventListener('click', (event) => {
       bookButton.classList.remove('hidden');
       bookingForm.classList.add('hidden');
+      listingPhoto.classList.remove('hidden');
     });
   }
 }
