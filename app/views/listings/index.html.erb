@@ -6,7 +6,7 @@
       <% @listings.each do |listing| %>
       <div class="listings-card">
 
-          <%= link_to "Rent", listing_path(listing), class: "listings-card-btn" %>
+        <%= link_to "Rent", listing, class: "listings-card-btn" %>
 
         <div class="listings-card-category">
           <%= listing.category %>
@@ -15,11 +15,16 @@
           $<%= listing.price %>
         </div>
         <div class="listings-card-description">
-        <%= listing.description %>
+          <%= listing.description %>
         </div>
         <div class="listings-card-location">
           <%= listing.user.location %>
         </div>
+        <% if listing.photo %>
+        <div class="listing-card-">
+          <%= cl_image_tag listing.photo, height: 150, width: 150, crop: :fill %>
+        </div>photo
+        <% end %>
       </div>
       <% end %>
     </div>

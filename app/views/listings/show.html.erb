@@ -1,25 +1,37 @@
+<%= render 'shared/showcard' %>
+
 <div class="listings-bg-img">
 
-  <h1>This is a testing page boiyo</h1>
+  <div class="book-btn btn btn-danger">
+    Book
+  </div>
 
-  <%= @listing.category %>
-  <%= @listing.description %>
-  <%= @listing.price %>
+  <% if current_user && policy(@booking).create? %>
+  <div class="book-form">
+    <%= simple_form_for([@listing, @booking]) do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit data: {confirm: @booking_message }%>
+    <% end %>
+  </div>
+  <% end %>
 
-  <% if policy(@listing).update? %>
+
+  <% if current_user && policy(@listing).update? %>
   <div class="edit-btn btn btn-danger">
     Edit
   </div>
-  <% end %>
 
   <div class="edit-form">
     <%= simple_form_for(@listing) do |f| %>
     <%= f.input :category %>
     <%= f.input :description %>
     <%= f.input :price %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
     <%= f.submit %>
     <% end %>
-
   </div>
+  <% end %>
 </div>
 

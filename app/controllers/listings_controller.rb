@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  before_action :find_listing, only: [:show, :edit, :update, :destroy]
+  before_action :find_listing, only: [:show, :new, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -8,12 +8,17 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    @booking = Booking.new
+    @booking_message = "The total price for this booking will be: #{@booking.total_price}. Do you want to continue?"
+  end
+
+  def new
   end
 
   def create
-    @listing = Listing.create(listing_params)
-    @listing.user = current_user
+    @listing = Listing.new(listing_params)
     authorize @listing
+    @listing.user = current_user
     if @listing.save
       redirect_to user_path(current_user)
     else
@@ -47,6 +52,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:category, :description, :price, :user_id)
+    params.require(:listing).permit(:category, :description, :price, :user_id, :photo)
   end
 end
