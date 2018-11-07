@@ -10,7 +10,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    true unless user == record.user
   end
 
 end
