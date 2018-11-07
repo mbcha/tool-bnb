@@ -2,11 +2,9 @@
 
   <h1>This is a testing page boiyo</h1>
 
-  <%= @listing.category %>
-  <%= @listing.description %>
-  <%= @listing.price %>
+  <%= render 'shared/showcard' %>
 
-  <% if policy(@listing).update? %>
+  <% if current_user && policy(@listing).update? %>
   <div class="edit-btn btn btn-danger">
     Edit
   </div>
@@ -19,7 +17,6 @@
     <%= f.input :price %>
     <%= f.submit %>
     <% end %>
-
   </div>
 </div>
 

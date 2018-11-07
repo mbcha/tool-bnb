@@ -33,8 +33,8 @@
           <h3>My Listings</h3>
 
           <% @user.listings.each do |listing| %>
-          <p><%= listing.category %> - <%= listing.description %></p>
-          <%= link_to "Edit", edit_listing_path(listing) %>
+              <p><%= listing.category %> - <%= listing.description %></p>
+              <%= link_to "Edit", edit_listing_path(listing) %>
           <% end %>
         </div>
     </div>
