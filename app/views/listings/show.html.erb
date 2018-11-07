@@ -1,29 +1,30 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260');">
-  <div class="show-content">
-    <div class="row">
-      <div class="col-xs-4">
-        <% if @listing.photo == nil %>
-        <img src="https://images.pexels.com/photos/1409215/pexels-photo-1409215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Tool photo">
-        <% else %>
-        <img src="<%= cl_image_tag @listing.photo %>" alt="Tool">
-        <% end %>
-      </div>
+<div class="listings-show-bg-img" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260');">
 
-      <div class="col-xs-4">
-        <h3><%= @listing.category %> </h3>
-        <div id='showcard-content' style="overflow-y: scroll; height:100px width:100px">
-          <p> <%= @listing.description %> </p>
-          <p> LINK TO CITY DISTRICT </p>
-        </div>
-        <p> 250€ </p>
-        <% if current_user && policy(@booking).create? %>
-        <a href="#" class="book-button">Book</a>
-        <% end %>
-        <% if current_user && policy(@listing).update? %>
-        <a href="#" class="edit-button">Edit</a>
-        <% end %>
-      </div>
+  <div class="listing-show-main-container">
+
+    <div class="listing-show-pic">
+      <% if @listing.photo == nil %>
+      <img src="https://images.pexels.com/photos/1409215/pexels-photo-1409215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Tool photo">
+      <% else %>
+      <img src="<%= cl_image_tag @listing.photo %>" alt="Tool">
+      <% end %>
     </div>
+    <div class="listing-show-info">
+      <h3><%= @listing.category %> </h3>
+      <div id='showcard-content' style="overflow-y: scroll; height:100px width:100px" >
+        <p> <%= @listing.description %> </p>
+        <p> LINK TO CITY DISTRICT </p>
+      </div>
+      <p> 250€ </p>
+      <% if current_user && policy(@booking).create? %>
+      <a href="#" class="book-button">Book</a>
+      <% end %>
+      <% if current_user && policy(@listing).update? %>
+      <a href="#" class="edit-button">Edit</a>
+      <% end %>
+    </div>
+
+
   </div>
 
   <div class="listings-bg-img">
