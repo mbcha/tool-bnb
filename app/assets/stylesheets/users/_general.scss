@@ -1,0 +1,172 @@
+.user-background {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main-container{
+  width: 85%;
+  padding-top: 7%;
+}
+
+.user-details {
+  color: white;
+  background-color: #002139;
+  opacity: 0.9;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80vh;
+  border-radius: 0px 3px 3px 3px;
+  border-left: 2px solid rgba(255,255,255, 0.9);
+  border-right: 2px solid rgba(255,255,255, 0.9);
+  border-bottom: 2px solid rgba(255,255,255, 0.9);
+  position: relative;
+}
+
+.user-details-top {
+  position: absolute;
+  top: 10px;
+  left: 38%;
+}
+
+.user-details-top h3 {
+  font-size: 35px;
+}
+
+.user-details-top p {
+  font-size: 15px;
+}
+
+.user-my-listings {
+  color: white;
+  background-color: #002139;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  border-radius: 0px 3px 3px 3px;
+  border-left: 2px solid rgba(255,255,255, 0.9);
+  border-right: 2px solid rgba(255,255,255, 0.9);
+  border-bottom: 2px solid rgba(255,255,255, 0.9);
+  position: relative;
+}
+
+.listing-title {
+  color: white;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255,255,255, 0.9);
+}
+
+.listings-list {
+  color: white;
+  width: 95%;
+  list-style-type: none;
+  line-height: 50px;
+  padding: 0px;
+}
+.each-listing {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-my-bookings {
+  color: white;
+  background-color: #002139;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  height: 80vh;
+  border-radius: 0px 3px 3px 3px;
+  border-left: 2px solid rgba(255,255,255, 0.9);
+  border-right: 2px solid rgba(255,255,255, 0.9);
+  border-bottom: 2px solid rgba(255,255,255, 0.9);
+  position: relative;
+}
+
+.user-listings-form {
+  color: white;
+  background-color: #002139;
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  height: 80vh;
+  border-radius: 0px 3px 3px 3px;
+  border-left: 2px solid rgba(255,255,255, 0.9);
+  border-right: 2px solid rgba(255,255,255, 0.9);
+  border-bottom: 2px solid rgba(255,255,255, 0.9);
+  position: relative;
+}
+
+.new-listing-btn {
+  background: $red;
+  padding: 3px 7px;
+  height: 35px;
+  margin-top: 5px;
+}
+
+
+// .users-container {
+//   background-color: white;
+//   opacity: 0.9;
+//   display: flex;
+//   justify-content: space-around;
+//   // align-items: center;
+//   height: 80vh;
+//   margin-top: 10%;
+//   border-radius: 3px;
+// }
+
+
+// .user-box-one {
+//   color: white;
+//   flex-grow: 1;
+//   text-align: left;
+//   width: 35%;
+//   background-color: #002139;
+//   opacity: 0.8;
+//   height: 98%;
+//   margin: 5px;
+//   border-radius: 3px;
+//   text-align: center;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .user-box-two {
+//   color: white;
+//   flex-grow: 1;
+//   text-align: center;
+//   width: 35%;
+//   background-color: #002139;
+//   opacity: 0.8;
+//   height: 98%;
+//   margin: 5px 5px 5px 0px;
+//   border-radius: 3px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+// }
+
+
+// .user-booking-container {
+//   margin-top: 50px;
+//   background-color: white;
+//   opacity: 0.9;
+//   height: 800px;
+//   border-radius: 3px;
+// }
+
+// .new-listing-form {
+//   width: 200px;
+// }
