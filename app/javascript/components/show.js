@@ -16,7 +16,9 @@ function changeTabs() {
       userListings.classList.add('hidden');
       lastTab.classList.remove('active');
       userBookings.classList.add('hidden');
-  });
+      addForm.classList.add('hidden');
+
+    });
     secondTab.addEventListener('click', (event) => {
       firstTab.classList.remove('active');
       userDetails.classList.add('hidden');
@@ -24,7 +26,9 @@ function changeTabs() {
       userListings.classList.remove('hidden');
       lastTab.classList.remove('active');
       userBookings.classList.add('hidden');
-  });
+      addForm.classList.add('hidden');
+
+    });
     lastTab.addEventListener('click', (event) => {
       firstTab.classList.remove('active');
       userDetails.classList.add('hidden');
@@ -32,12 +36,14 @@ function changeTabs() {
       userListings.classList.add('hidden');
       lastTab.classList.add('active');
       userBookings.classList.remove('hidden');
-  });
+      addForm.classList.add('hidden');
+
+    });
     addButton.addEventListener('click', (event) => {
       if (addButton.innerHTML == "New Listing") {
         addButton.innerHTML = "Back to list";
       } else {
-      addButton.innerHTML = "New Listing";
+        addButton.innerHTML = "New Listing";
       }
       firstTab.classList.remove('active');
       userDetails.classList.add('hidden');
@@ -46,7 +52,7 @@ function changeTabs() {
       lastTab.classList.remove('active');
       userBookings.classList.add('hidden');
       addForm.classList.toggle('hidden');
-  });
+    });
   }
 };
 
