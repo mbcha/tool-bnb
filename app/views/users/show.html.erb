@@ -11,7 +11,7 @@
     <div class="user-details">
       <div class="user-details-top">
         <h3><%= @user.name %>'s Profile</h3>
-        <p><%= link_to "Edit my Details", edit_user_registration_path %></p>
+        <p><%= link_to "Edit my Details", edit_user_registration_path, class: "btn btn-danger" %></p>
       </div>
       <p>Location: <%= @user.location %></p>
     </div>
@@ -27,7 +27,7 @@
         <% @user.listings.each do |listing| %>
         <li class="each-listing" style="overflow-y: scroll; height:100px;">
           <div>
-            <%= listing.category %>
+            <%= link_to listing.category, listing_path(listing) %>
           </div>
           <div>
             <%= listing.description %>

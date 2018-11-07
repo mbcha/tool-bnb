@@ -10,7 +10,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def create?
-    !(user == record.user)
+    user == record.user ? false : true
   end
 
 end
