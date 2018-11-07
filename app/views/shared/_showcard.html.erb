@@ -17,15 +17,15 @@
         </div>
         <p> 250€ </p>
         <% if current_user && policy(@booking).create? %>
-          <a class="book-button">Book</a>
+        <a class="book-button">Book</a>
         <% end %>
         <% if current_user && policy(@listing).update? %>
         <div class="edit-button">
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 <!-- function openForm() {
  divocument.getElementById("book-form").style.display = " block"; %>
@@ -34,33 +34,30 @@
 function openForm() { %>
 divocument.getElementById("book-form").style.display = " none"; %>
 }%>
- -->
-<div class="listings-bg-img">
-
-  <% if current_user && policy(@booking).create? %>
-  <div class="book-form" id='book-form'>
-    <%= simple_form_for([@listing, @booking]) do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.submit data: {confirm: @booking_message }, input_html: {id:"submit-button"}%>
-    <% end %>
-  </div>
-  <% end %>
-
-
-  <% if current_user && policy(@listing).update? %>
-  <div class="edit-button">
-    Edit
-  </div>
-
-  <div class="edit-form" id='edit-form'>
-    <%= simple_form_for(@listing) do |f| %>
-    <%= f.input :category %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.submit %>
-    <% end %>
-  </div>
+-->
+<% if current_user && policy(@booking).create? %>
+<div class="book-form hidden" id='book-form'>
+  <%= simple_form_for([@listing, @booking]) do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit data: {confirm: @booking_message }, input_html: {id:"submit-button"}%>
   <% end %>
 </div>
+<% end %>
+
+
+<% if current_user && policy(@listing).update? %>
+<div class="edit-button">
+  Edit
+</div>
+
+<div class="edit-form hidden" id='edit-form'>
+  <%= simple_form_for(@listing) do |f| %>
+  <%= f.input :category %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.submit %>
+  <% end %>
+</div>
+<% end %>
 
