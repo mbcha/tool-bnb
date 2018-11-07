@@ -15,7 +15,7 @@
       <div class="user-box-two">
 
         <h3>Add a new listing</h3>
-          <div class="new-listing-form">
+        <div class="new-listing-form">
           <%= simple_form_for(Listing.new) do |f| %>
           <%= f.input :category %>
           <%= f.input :description %>
@@ -29,14 +29,18 @@
 
     <div class="user-booking-container">
       <h3>My Bookings</h3>
-       <div class="user-listings">
-          <h3>My Listings</h3>
+      <%= @user.bookings.each do |booking| %>
+      <p><%= booking.listing.category %> - <%= booking.start_date %> - <%= booking.end_date %> - <%= booking.total_price %></p>
+      <% end %>
+    </div>
 
-          <% @user.listings.each do |listing| %>
-          <p><%= listing.category %> - <%= listing.description %></p>
-          <%= link_to "Edit", edit_listing_path(listing) %>
-          <% end %>
-        </div>
+
+    <div class="user-listings">
+      <h3>My Listings</h3>
+
+      <% @user.listings.each do |listing| %>
+      <p><%= listing.category %> - <%= listing.description %></p>
+      <% end %>
     </div>
   </div>
 

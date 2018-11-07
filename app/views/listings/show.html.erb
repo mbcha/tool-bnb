@@ -3,6 +3,20 @@
 <!-- <div class="listings-bg-img">
 
 
+  <div class="book-btn btn btn-danger">
+    Book
+  </div>
+
+  <% if current_user && policy(@booking).create? %>
+  <div class="book-form">
+    <%= simple_form_for([@listing, @booking]) do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit data: {confirm: @booking_message }%>
+    <% end %>
+  </div>
+  <% end %>
+
 
   <% if current_user && policy(@listing).update? %>
   <div class="edit-btn btn btn-danger">
@@ -16,7 +30,6 @@
     <%= f.input :price %>
     <%= f.submit %>
     <% end %>
-
   </div>
   <% end %>
 </div>

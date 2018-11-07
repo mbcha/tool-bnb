@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = current_user
+    @booking = Booking.new
     authorize @user
   end
 
