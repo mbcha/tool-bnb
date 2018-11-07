@@ -71,13 +71,16 @@ function openForms() {
       editButton.classList.add('hidden');
       editForm.classList.remove('hidden');
     });
-    bookButton.addEventListener('click', (event) => {
-      bookButton.classList.add('hidden');
-      bookingForm.classList.remove('hidden');
-    });
     cancelButtonEdit.addEventListener('click', (event) => {
       editButton.classList.remove('hidden');
       editForm.classList.add('hidden');
+    });
+  }
+
+  if (bookButton) {
+    bookButton.addEventListener('click', (event) => {
+      bookButton.classList.add('hidden');
+      bookingForm.classList.remove('hidden');
     });
     cancelButtonBook.addEventListener('click', (event) => {
       bookButton.classList.remove('hidden');
