@@ -9,18 +9,29 @@
   <% if current_user && policy(@booking).create? %>
   <script>
     function calcPrice(price) {
-      const startDate1 = document.getElementsByName('booking[start_date(1i)]')[0].value;
-      const startDate2 = document.getElementsByName('booking[start_date(2i)]')[0].value;
-      const startDate3 = document.getElementsByName('booking[start_date(3i)]')[0].value;
-      const startDate4 = document.getElementsByName('booking[start_date(4i)]')[0].value;
-      const startDate5 = document.getElementsByName('booking[start_date(5i)]')[0].value;
+      const startDate1 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(1i)]"]')[0].value;
+      const startDate2 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(2i)]"]')[0].value;
+      const startDate3 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(3i)]"]')[0].value;
+      const startDate4 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(4i)]"]')[0].value;
+      const startDate5 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(5i)]"]')[0].value;
 
-      const endDate1 = document.getElementsByName('booking[end_date(1i)]')[0].value;
-      const endDate2 = document.getElementsByName('booking[end_date(2i)]')[0].value;
-      const endDate3 = document.getElementsByName('booking[end_date(3i)]')[0].value;
-      const endDate4 = document.getElementsByName('booking[end_date(4i)]')[0].value;
-      const endDate5 = document.getElementsByName('booking[end_date(5i)]')[0].value;
+      const endDate1 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(1i)]"]')[0].value;
+      const endDate2 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(2i)]"]')[0].value;
+      const endDate3 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(3i)]"]')[0].value;
+      const endDate4 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(4i)]"]')[0].value;
+      const endDate5 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(5i)]"]')[0].value;
 
+      console.log(startDate1);
+      console.log(startDate2);
+      console.log(startDate3);
+      console.log(startDate4);
+      console.log(startDate5);
+
+      console.log(endDate1);
+      console.log(endDate2);
+      console.log(endDate3);
+      console.log(endDate4);
+      console.log(endDate5);
 
       const totalYear = endDate1 - startDate1;
       const totalMonth = endDate2 - startDate2;
@@ -30,15 +41,24 @@
 
       const totalHours = (totalYear*12*30*24) + (totalMonth*30*24) + (totalDay*24) + (totalHour) + (totalMin/60);
 
+      console.log(totalYear);
+      console.log(totalMonth);
+      console.log(totalDay);
+      console.log(totalHour);
+      console.log(totalMin);
+      console.log('-----');
+      console.log(price);
+      console.log(totalHours);
       console.log(totalHours*price);
       document.getElementById("booking-price").innerHTML = totalHours*price;
     }
   </script>
-  <div class="book-form">
+  <div class="book-form new-booking-form">
       <%= simple_form_for([@listing, @booking]) do |f| %>
       <%= f.input :start_date, input_html: { id: 'start-date', onClick: "calcPrice(#{@listing.price})" } %>
       <%= f.input :end_date, input_html: { id: 'end-date', onClick: "calcPrice(#{@listing.price})" } %>
       <%= f.submit data: {confirm: @booking_message } %>
+
     <% end %>
     <p id="booking-price">Total Price</p>
   </div>
