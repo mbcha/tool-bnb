@@ -6,7 +6,7 @@
       <% @listings.each do |listing| %>
       <div class="listings-card">
 
-          <%= link_to "Rent", listing_path(listing), class: "listings-card-btn" %>
+          <%= link_to "Rent", listing, class: "listings-card-btn" %>
 
         <div class="listings-card-category">
           <%= listing.category %>
