@@ -3,12 +3,12 @@
   <div class="main-container">
     <div class="tabs">
         <div class="tab tab-first">Profile</div>
-        <div class="tab active">Listings</div>
+        <div class="tab tab-second active">Listings</div>
         <div class="tab tab-last">Bookings</div>
         <div class="new-listing-btn">New Listing</div>
     </div>
 
-    <div class="user-details hidden">
+    <div class="user-details">
       <div class="user-details-top">
         <h3><%= @user.name %>'s Profile</h3>
         <p><%= link_to "Edit my Details", edit_user_registration_path %></p>
@@ -16,7 +16,7 @@
       <p>Location: <%= @user.location %></p>
     </div>
 
-    <div class="user-my-listings">
+    <div class="user-my-listings hidden">
       <ul class="listings-list">
         <li class="each-listing listing-title">
           <div>Category</div>

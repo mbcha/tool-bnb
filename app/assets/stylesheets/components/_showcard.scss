@@ -10,7 +10,6 @@
   display:flex;
   align-items:center;
   justify-content:space-around;
-  background-color: black;
   height: 400px;
   width: 600px;
   border-radius: 3%;
@@ -18,6 +17,7 @@
   background-color: #002139;
   opacity: 0.9;
   position:relative;
+  box-shadow: 5px 5px 5px rgba(0, 33, 57, 0.8);
 }
 
 
@@ -50,14 +50,21 @@ img{
   position:absolute
 }
 
- .reserve-button:hover {
+#showcard-content{
+  background-color: #262147;
+  color:white;
+  border-radius: 4px;
+}
+
+ .book-button:hover {
   opacity: 1;
   background: #3ac162;
   text-decoration: none;
   color: white;
+  opacity: 1;
 }
 
-.reserve-button {
+.book-button, .edit-button {
   color: white;
   padding: 10px 15px;
   border-radius: 4px;
@@ -71,5 +78,20 @@ img{
   align-items:center;
   justify-content:center;
   color:white;
+}
+
+.book-form, .edit-form{
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 3%;
+  border:2px solid rgba(255,255,255, 0.9);
+  background-color: #D74E09;
+  opacity:0.9;
+  color:white;
+  box-shadow: 5px 5px 5px rgba(0, 33, 57, 0.8);
+}
+
+#submit-button{
+  color:black;
 }
 
