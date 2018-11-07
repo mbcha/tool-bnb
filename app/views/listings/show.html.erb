@@ -52,11 +52,11 @@
         const totalHours = (totalYear*12*30*24) + (totalMonth*30*24) + (totalDay*24) + (totalHour) + (totalMin/60);
 
         console.log(totalHours*price);
-        document.getElementById("booking-price").innerHTML = totalHours*price;
+        document.getElementById("booking-price").innerHTML = "Total Price: " + totalHours*price;
       }
     </script>
     <div class="booking-create-form">
-      <div class="book-form hidden">
+      <div class="new-booking-form book-form hidden">
         <%= simple_form_for([@listing, @booking]) do |f| %>
         <%= f.input :start_date, input_html: { id: 'start-date', onClick: "calcPrice(#{@listing.price})" } %>
         <%= f.input :end_date, input_html: { id: 'end-date', onClick: "calcPrice(#{@listing.price})" } %>
