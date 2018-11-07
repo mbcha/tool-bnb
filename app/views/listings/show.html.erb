@@ -1,1 +1,63 @@
 <%= render 'shared/showcard' %>
+
+<div class="listings-bg-img">
+
+  <div class="book-btn btn btn-danger">
+    Book
+  </div>
+
+  <% if current_user && policy(@booking).create? %>
+  <script>
+    function calcPrice(price) {
+      const startDate1 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(1i)]"]')[0].value;
+      const startDate2 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(2i)]"]')[0].value;
+      const startDate3 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(3i)]"]')[0].value;
+      const startDate4 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(4i)]"]')[0].value;
+      const startDate5 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(5i)]"]')[0].value;
+
+      const endDate1 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(1i)]"]')[0].value;
+      const endDate2 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(2i)]"]')[0].value;
+      const endDate3 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(3i)]"]')[0].value;
+      const endDate4 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(4i)]"]')[0].value;
+      const endDate5 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(5i)]"]')[0].value;
+
+      const totalYear = endDate1 - startDate1;
+      const totalMonth = endDate2 - startDate2;
+      const totalDay = endDate3 - startDate3;
+      const totalHour = endDate4 - startDate4;
+      const totalMin = endDate5 - startDate5;
+
+      const totalHours = (totalYear*12*30*24) + (totalMonth*30*24) + (totalDay*24) + (totalHour) + (totalMin/60);
+
+      document.getElementById("booking-price").innerHTML = totalHours*price;
+    }
+  </script>
+  <div class="book-form new-booking-form">
+      <%= simple_form_for([@listing, @booking]) do |f| %>
+      <%= f.input :start_date, input_html: { id: 'start-date', onClick: "calcPrice(#{@listing.price})" } %>
+      <%= f.input :end_date, input_html: { id: 'end-date', onClick: "calcPrice(#{@listing.price})" } %>
+      <%= f.submit data: {confirm: @booking_message } %>
+
+    <% end %>
+    <p id="booking-price">Total Price</p>
+  </div>
+  <% end %>
+
+
+  <% if current_user && policy(@listing).update? %>
+  <div class="edit-btn btn btn-danger">
+    Edit
+  </div>
+
+  <div class="edit-form">
+    <%= simple_form_for(@listing) do |f| %>
+    <%= f.input :category %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.submit %>
+    <% end %>
+  </div>
+  <% end %>
+</div>
