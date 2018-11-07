@@ -17,7 +17,7 @@
         </div>
         <p> 250€ </p>
         <% if current_user && policy(@booking).create? %>
-        <a href="#" class="book-button">Book</a>
+        <a href="" class="book-button">Book</a>
         <% end %>
         <% if current_user && policy(@listing).update? %>
         <a href="#" class="edit-button">Edit</a>
@@ -29,17 +29,17 @@
   <div class="listings-bg-img">
     <script>
       function calcPrice(price) {
-        const startDate1 = document.getElementsByName('booking[start_date(1i)]')[0].value;
-        const startDate2 = document.getElementsByName('booking[start_date(2i)]')[0].value;
-        const startDate3 = document.getElementsByName('booking[start_date(3i)]')[0].value;
-        const startDate4 = document.getElementsByName('booking[start_date(4i)]')[0].value;
-        const startDate5 = document.getElementsByName('booking[start_date(5i)]')[0].value;
+        const startDate1 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(1i)]"]')[0].value;
+        const startDate2 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(2i)]"]')[0].value;
+        const startDate3 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(3i)]"]')[0].value;
+        const startDate4 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(4i)]"]')[0].value;
+        const startDate5 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(5i)]"]')[0].value;
 
-        const endDate1 = document.getElementsByName('booking[end_date(1i)]')[0].value;
-        const endDate2 = document.getElementsByName('booking[end_date(2i)]')[0].value;
-        const endDate3 = document.getElementsByName('booking[end_date(3i)]')[0].value;
-        const endDate4 = document.getElementsByName('booking[end_date(4i)]')[0].value;
-        const endDate5 = document.getElementsByName('booking[end_date(5i)]')[0].value;
+        const endDate1 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(1i)]"]')[0].value;
+        const endDate2 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(2i)]"]')[0].value;
+        const endDate3 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(3i)]"]')[0].value;
+        const endDate4 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(4i)]"]')[0].value;
+        const endDate5 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(5i)]"]')[0].value;
 
 
         const totalYear = endDate1 - startDate1;
