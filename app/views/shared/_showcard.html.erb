@@ -2,7 +2,12 @@
   <div class="show-content">
     <div class="row">
       <div class="col-xs-4">
-        <img src="<%= cl_image_path @listing.photo %>">
+        <% if @listing.photo == nil %>
+        <img src="" alt="Tool photo">
+        <% else %>
+        <img src="<%= cl_image_tag @listing.photo %>">
+        <% end %>
+
       </div>
       <div class="col-xs-4">
         <h3><%= @listing.category %> </h3>
