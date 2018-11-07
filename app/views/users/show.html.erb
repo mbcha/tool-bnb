@@ -31,7 +31,11 @@
             <%= listing.description %>
           </div>
           <div>
-            <%= link_to "Edit", edit_listing_path(listing) %>
+            <% if listing.available %>
+            <p>Available</p>
+            <% else %>
+            <p>Booked</p>
+            <% end %>
           </div>
           <% end %>
         </li>
@@ -69,7 +73,6 @@
             <%= booking.total_price %>
           </div>
           <div>
-            <%= link_to "Edit", edit_listing_path(listing) %>
           </div>
           <% end %>
         </li>
