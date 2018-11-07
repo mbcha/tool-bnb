@@ -6,7 +6,10 @@
       </div>
       <div class="col-xs-4">
         <h3><%= @listing.category %> </h3>
-        <p> <%= @listing.description %> </p>
+        <div style="overflow-y: scroll; height:100px;">
+          <p> <%= @listing.description %> </p>
+          <p> LINK TO CITY DISTRICT </p>
+        </div>
         <p> 250€ </p>
         <a class="reserve-button">Reserve</a>
       </div>

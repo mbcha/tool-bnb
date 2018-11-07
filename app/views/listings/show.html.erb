@@ -1,16 +1,13 @@
-<div class="listings-bg-img">
+<%= render 'shared/showcard' %>
 
-  <h1>This is a testing page boiyo</h1>
+<!-- <div class="listings-bg-img">
 
-  <%= @listing.category %>
-  <%= @listing.description %>
-  <%= @listing.price %>
 
-  <% if policy(@listing).update? %>
+
+  <% if current_user && policy(@listing).update? %>
   <div class="edit-btn btn btn-danger">
     Edit
   </div>
-  <% end %>
 
   <div class="edit-form">
     <%= simple_form_for(@listing) do |f| %>
@@ -21,5 +18,7 @@
     <% end %>
 
   </div>
+  <% end %>
 </div>
 
+ -->
