@@ -2,9 +2,10 @@
 
   <div class="main-container">
     <div class="tabs">
-        <a href="#" class="tab tab-first active">Profile</a>
-        <a href="#" class="tab tab-second">Listings</a>
-        <a href="#" class="tab tab-last">Bookings</a>
+        <div class="tab tab-first">Profile</div>
+        <div class="tab tab-second active">Listings</div>
+        <div class="tab tab-last">Bookings</div>
+        <div class="new-listing-btn">New Listing</div>
     </div>
 
     <div class="user-details">
@@ -20,15 +21,19 @@
         <li class="each-listing listing-title">
           <div>Category</div>
           <div>Description</div>
-          <div class = "btn new-listing-btn">New Listing</div>
+          <div>Price</div>
+          <div>Status</div>
         </li>
         <% @user.listings.each do |listing| %>
-        <li class="each-listing">
+        <li class="each-listing" style="overflow-y: scroll; height:100px;">
           <div>
             <%= listing.category %>
           </div>
           <div>
             <%= listing.description %>
+          </div>
+          <div>
+            <%= listing.price %>
           </div>
           <div>
             <% if listing.available %>

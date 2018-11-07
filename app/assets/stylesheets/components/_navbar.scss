@@ -17,6 +17,7 @@
 .navbar-main-brand {
   height: 30px;
   color:white;
+  font-size: 30px;
 }
 
 /* User Avatar */
@@ -89,4 +90,14 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.nav-bar-relative {
+  position: relative;
+}
+
+.flash-msg-fixed {
+  position: absolute;
+  left: 45%;
+  top: 1%;
 }
