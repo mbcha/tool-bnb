@@ -1,0 +1,33 @@
+.tabs {
+  display: flex;
+}
+
+
+.tab {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: white;
+  opacity: 0.9;
+}
+
+.tabs a {
+  text-decoration: none;
+}
+
+.tab.active {
+  color: white;
+  background-color: #002139;
+  opacity: 0.9;
+  border-left: 2px solid rgba(255,255,255, 0.9);
+  border-right: 2px solid rgba(255,255,255, 0.9);
+  border-top: 2px solid rgba(255,255,255, 0.9);
+}
+
+.tab-first {
+  border-radius: 3px 0px 0px 0px;
+}
+
+.tab-last {
+  border-radius: 0px 3px 0px 0px;
+}

@@ -2,7 +2,6 @@
 
 <div class="listings-bg-img">
 
-
   <div class="book-btn btn btn-danger">
     Book
   </div>
@@ -56,10 +55,11 @@
     <%= f.input :category %>
     <%= f.input :description %>
     <%= f.input :price %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
     <%= f.submit %>
     <% end %>
   </div>
   <% end %>
 </div>
-
 
