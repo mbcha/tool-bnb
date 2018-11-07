@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @booking.listing = Listing.find(params[:listing_id])
     @booking.user = current_user
     @booking.total_price = @booking.listing.price * (@booking.end_date - @booking.start_date)
-    raise
+
     if @booking.save
       redirect_to current_user
     else
