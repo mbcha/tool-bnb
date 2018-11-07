@@ -28,6 +28,6 @@ class ListingPolicy < ApplicationPolicy
   private
 
   def is_user_owner_admin?
-    user == record || user.admin?
+    user == record.user || user.admin?
   end
 end
