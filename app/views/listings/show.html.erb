@@ -19,10 +19,12 @@
 
     <div class="listing-show-form">
       <div class="listing-show-pic">
+        <%= raise %>
       <% if @listing.photo == nil %>
-      <img src="https://images.pexels.com/photos/1409215/pexels-photo-1409215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Tool photo">
+      <%= raise %>
+      <% image_tag "tool", alt: "fuck max" %>
       <% else %>
-      <img src="<%= cl_image_tag @listing.photo %>" alt="Tool">
+      <%= cl_image_tag @listing.photo %>
       <% end %>
     </div>
 
