@@ -7,6 +7,7 @@ function changeTabs() {
   const userBookings = document.querySelector('.user-my-bookings');
   const addForm = document.querySelector('.user-listings-form');
   const addButton = document.querySelector('.new-listing-btn');
+  const cancelButton = document.querySelector('.cancel-new')
 
 
   if (firstTab) {
@@ -68,11 +69,6 @@ function changeTabs() {
 
     });
     addButton.addEventListener('click', (event) => {
-      if (addButton.innerHTML == "New Listing") {
-        addButton.innerHTML = "Back to list";
-      } else {
-        addButton.innerHTML = "New Listing";
-      }
       firstTab.classList.remove('active');
       userDetails.classList.add('hidden');
       secondTab.classList.add('active');
@@ -82,6 +78,16 @@ function changeTabs() {
       lastTab.classList.remove('active');
       userBookings.classList.add('hidden');
       addForm.classList.toggle('hidden');
+    });
+    cancelButton.addEventListener('click', (event) => {
+      firstTab.classList.remove('active');
+      userDetails.classList.add('hidden');
+      secondTab.classList.add('active');
+      userListings.classList.remove('hidden');
+      lastTab.classList.remove('active');
+      userBookings.classList.add('hidden');
+      addForm.classList.add('hidden');
+
     });
   }
 };
@@ -95,7 +101,7 @@ function openForms() {
   const editForm = document.querySelector('.edit-form');
   const cancelButtonEdit = document.querySelector('.cancel-button-edit');
   const cancelButtonBook = document.querySelector('.cancel-button-booking');
-  const listingPhoto = document.querySelector('.listing-show-pic')
+  const listingPhoto = document.querySelector('.listing-show-pic');
 
   if (editButton) {
     editButton.addEventListener('click', (event) => {
@@ -107,6 +113,14 @@ function openForms() {
       editButton.classList.remove('hidden');
       editForm.classList.add('hidden');
       listingPhoto.classList.remove('hidden');
+    });
+    // stays on the bookings tab if redirect was passed ending in #bookings
+    $(document).ready(function () {
+      if(window.location.href.indexOf("#edit") > -1) {
+        editButton.classList.add('hidden');
+        editForm.classList.remove('hidden');
+        listingPhoto.classList.add('hidden');
+      }
     });
   }
 

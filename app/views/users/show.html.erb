@@ -3,9 +3,8 @@
   <div class="main-container">
     <div class="tabs">
       <a href="#" class="tab tab-first active">Profile</a>
-      <a href="#" class="tab tab-second">Listings</a>
+      <a href="#" class="tab tab-second">Advertised Tools</a>
       <a href="#" class="tab tab-last">Bookings</a>
-      <a href="#" class="new-listing-btn">New Listing</a>
     </div>
 
     <div class="user-details">
@@ -17,39 +16,50 @@
     </div>
 
     <div class="user-my-listings hidden">
-      <ul class="listings-list">
-        <li class="each-listing listing-title">
-          <div>Category</div>
-          <div>Description</div>
-          <div>Price</div>
-          <div>Status</div>
-        </li>
+      <div class="add-new-tool">
+        <a href="#" class="new-listing-btn btn btn-danger">Add a new tool</a>
+      </div>
+      <div class="listings-row">
+        <% if @user.listings.nil? %>
+        <div class="listings-card">
+          <h3>You have no tools advertised yet.</h3>
+        </div>
+        <% else %>
         <% @user.listings.each do |listing| %>
-        <li class="each-listing" style="overflow-y: scroll; height:100px;">
-          <div>
-            <%= link_to listing.category, listing_path(listing) %>
+        <div class="listings-card">
+
+          <%= link_to "Edit", listing_path(listing) + '#edit', class: "listings-card-btn" %>
+
+          <div class="listings-card-category">
+            <%= listing.category.capitalize %>
           </div>
-          <div>
-            <%= listing.description %>
+          <div class="listings-card-price">
+            €<%= listing.price %> per hour
           </div>
-          <div>
-            <%= listing.price %>
+          <div class="listings-card-description">
+            <%= listing.description.capitalize.first(50) %>...
           </div>
-          <div>
-            <div class="delete-listing">
-              <%= link_to 'Delete', listing_path(listing),
-              method: :delete, class: 'btn btn-warning',
-              data: { confirm: "Are you sure?" } %>
-              <% if listing.available %>
-                <p>Available</p>
-              <% else %>
-                <p>Booked</p>
-              <% end %>
-            </div>
+          <div class="listings-card-location">
+            <% if listing.available %>
+            <p>AVAILABLE</p>
+            <% else %>
+            <p>BOOKED</p>
+            <% end %>
           </div>
+          <% if listing.photo.url.nil? %>
+          <img src="https://images.pexels.com/photos/1409215/pexels-photo-1409215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="tool" class="listing-card-photo">
+          <% else %>
+          <%= cl_image_tag listing.photo, height: 150, width: 150, crop: :fill, class: "listing-card-photo" %>
           <% end %>
-        </li>
-      </ul>
+          <div class="delete-listing">
+            <%= link_to 'Delete', listing_path(listing),
+            method: :delete, class: 'delete-listing-btn btn btn-warning',
+            data: { confirm: "Are you sure?" } %>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
     </div>
 
     <div class="user-listings-form hidden">
@@ -62,44 +72,57 @@
         <%= f.input :price %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
-        <%= f.submit "Add"%>
+        <a href="#" class="cancel-new btn btn-primary">Cancel</a>
+        <%= f.submit "Add", class: "btn btn-danger" %>
         <% end %>
       </div>
     </div>
 
     <div class="user-my-bookings hidden">
-      <ul class="listings-list">
-        <li class="each-listing listing-title">
-          <div>Status</div>
-          <div>Total Price</div>
-          <div>Edit</div>
-        </li>
+      <div class="add-new-tool">
+        <h2 class="btn btn-danger">Please arrange payment directly with the other party.</h2>
+      </div>
+      <div class="listings-row">
+        <% if @user.bookings.nil? %>
+        <div class="listings-card">
+          <h3>You have no tools advertised yet.</h3>
+        </div>
+        <% else %>
         <% @user.bookings.each do |booking| %>
-        <li class="each-listing">
-            <div>
-              <%= booking.status %>
-              <% if current_user == booking.listing.user && booking.status == 'pending' %>
-                <%= form_for(booking) do |f| %>
-                  <%= f.hidden_field :status, value: 'confirmed' %>
-                  <%= f.submit :confirm, class: 'btn btn-success' %>
-                <% end %>
-                <%= form_for(booking) do |f| %>
-                  <%= f.hidden_field :status, value: 'declined' %>
-                  <%= f.submit :decline, class: 'btn btn-danger' %>
-                <% end %>
-              <% end %>
+        <div class="listings-card">
+            <% if current_user != booking.listing.user %>
+            <div class="listings-card-category">
+              BOOKED BY YOU
             </div>
-          <div>
-            <%= booking.total_price %>
+            <% end %>
+          <div class="listings-card-description">
+            <%= booking.listing.category.capitalize %>
+          </div>
+          <div class="listings-card-location">
+            <%= booking.status.upcase %>
+          </div>
+          <div class="booking-status">
+            <% if current_user == booking.listing.user %>
+            <%= form_for(booking) do |f| %>
+            <%= f.hidden_field :status, value: 'confirmed' %>
+            <%= f.submit :confirm, class: 'status-btn btn btn-success' %>
+            <% end %>
+            <%= form_for(booking) do |f| %>
+            <%= f.hidden_field :status, value: 'declined' %>
+            <%= f.submit :decline, class: 'status-btn btn btn-danger' %>
+            <% end %>
+            <% end %>
+          </div>
+          <div class="listings-card-price">
+            €<%= booking.total_price.to_f.round(2) %>
           </div>
           <div>
           </div>
-          <% end %>
-        </li>
-      </ul>
-
+        </div>
+        <% end %>
+        <% end %>
+      </div>
     </div>
 
   </div>
-
 </div>

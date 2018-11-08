@@ -1,27 +1,25 @@
 .tabs {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: solid 2px white;
+  height: 55px;
+  padding-bottom: 5px;
 }
-
-
 .tab {
-  padding: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  background-color: white;
-  opacity: 0.9;
 }
 
 .tabs a {
   text-decoration: none;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 2px 2px black;
 }
 
 .tab.active {
-  color: white;
-  background-color: #002139;
+  color: black;
   opacity: 0.9;
-  border-left: 2px solid rgba(255,255,255, 0.9);
-  border-right: 2px solid rgba(255,255,255, 0.9);
-  border-top: 2px solid rgba(255,255,255, 0.9);
 }
 
 .tab-first {
