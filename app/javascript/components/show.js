@@ -8,7 +8,20 @@ function changeTabs() {
   const addForm = document.querySelector('.user-listings-form');
   const addButton = document.querySelector('.new-listing-btn');
 
+
   if (firstTab) {
+    $(document).ready(function () {
+      if(window.location.href.indexOf("#bookings") > -1) {
+        firstTab.classList.remove('active');
+        userDetails.classList.add('hidden');
+        secondTab.classList.remove('active');
+        userListings.classList.add('hidden');
+        lastTab.classList.add('active');
+        userBookings.classList.remove('hidden');
+        addForm.classList.add('hidden');
+      }
+    });
+
     firstTab.addEventListener('click', (event) => {
       firstTab.classList.add('active');
       userDetails.classList.remove('hidden');
