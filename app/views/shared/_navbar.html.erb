@@ -16,7 +16,14 @@
     <!-- Profile picture with dropdown list -->
     <div class="navbar-tool-item">
       <div class="dropdown">
-        <img src="<%= cl_image_path current_user.photo %>" class="avatar dropdown-toggle" id="navbar-tool-menu" data-toggle="dropdown">
+        <%
+          image_path = if current_user.photo_url
+            cl_image_path current_user.photo
+          else
+            "https://kitt.lewagon.com/placeholder/users/random"
+          end
+        %>
+        <img src="<%= image_path %>" class="avatar dropdown-toggle" id="navbar-tool-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-tool-dropdown-menu">
           <li><%= link_to "Profile", user_path(current_user) %></li>
 

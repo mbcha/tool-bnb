@@ -78,7 +78,7 @@
         <li class="each-listing">
             <div>
               <%= booking.status %>
-              <% if current_user == booking.listing.user %>
+              <% if current_user == booking.listing.user && booking.status == 'pending' %>
                 <%= form_for(booking) do |f| %>
                   <%= f.hidden_field :status, value: 'confirmed' %>
                   <%= f.submit :confirm, class: 'btn btn-success' %>
