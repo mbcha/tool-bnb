@@ -10,3 +10,22 @@
 .form-text-center {
   text-align: center;
 }
+
+.flex-parent-form {
+  display: flex;
+}
+
+.flex-child-one-form {
+  flex-grow: 1;
+  padding: 5%;
+}
+
+.flex-child-two-form {
+  flex-grow: 1;
+  padding: 5%;
+}
+
+.flex-child-three-form {
+  flex-grow: 1;
+  padding: 5%;
+}
