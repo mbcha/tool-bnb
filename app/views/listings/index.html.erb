@@ -6,28 +6,24 @@
       <% @listings.each do |listing| %>
       <div class="listings-card">
 
-          <%= link_to "Rent", listing, class: "listings-card-btn" %>
+        <%= link_to "Book", listing, class: "listings-card-btn" %>
 
         <div class="listings-card-category">
-          <%= listing.category %>
+          <%= listing.category.capitalize %>
         </div>
         <div class="listings-card-price">
-          $<%= listing.price %>
+          €<%= listing.price %> per hour
         </div>
         <div class="listings-card-description">
-        <%= listing.description %>
+          <%= listing.description.capitalize.first(50) %>...
         </div>
         <div class="listings-card-location">
-          <%= listing.user.location %>
+          <%= listing.user.location.capitalize %>
         </div>
-        <% if listing.photo.nil? %>
-        <div class="listing-card-photo">
-          <img src="https://images.pexels.com/photos/1409215/pexels-photo-1409215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-        </div>
+        <% if listing.photo.url.nil? %>
+        <img src="https://images.pexels.com/photos/1409215/pexels-photo-1409215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="listing-card-photo">
         <% else %>
-        <div class="listing-card-photo">
-        </div>
-        <%= cl_image_tag listing.photo, height: 150, width: 150, crop: :fill %>
+        <%= cl_image_tag listing.photo, height: 150, width: 150, crop: :fill, class: "listing-card-photo" %>
         <% end %>
       </div>
       <% end %>
