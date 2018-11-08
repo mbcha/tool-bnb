@@ -15,18 +15,18 @@
       <% if current_user && policy(@listing).update? %>
       <a href="#" class="edit-button">Edit</a>
       <% end %>
+      <%= link_to "Back", :back  %>
     </div>
 
     <div class="listing-show-form">
       <div class="listing-show-pic">
+        <% if @listing.photo == nil %>
         <%= raise %>
-      <% if @listing.photo == nil %>
-      <%= raise %>
-      <% image_tag "tool", alt: "fuck max" %>
-      <% else %>
-      <%= cl_image_tag @listing.photo %>
-      <% end %>
-    </div>
+        <% image_tag "tool", alt: "fuck max" %>
+        <% else %>
+        <%= cl_image_tag @listing.photo %>
+        <% end %>
+      </div>
 
     <script>
       function calcPrice(price) {
