@@ -6,7 +6,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    user == record.user
+    user == record.listing.user || user == record.user
   end
 
   def new?
