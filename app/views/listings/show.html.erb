@@ -4,23 +4,25 @@
 
     <div class="listing-show-info">
       <h2><%= @listing.category.capitalize %> </h2>
-        <% if @listing.photo.url.nil? %>
-        <img src="https://images.pexels.com/photos/1409215/pexels-photo-1409215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="tool" class="show-page-photo">
-        <% else %>
-        <%= cl_image_tag @listing.photo %>
-        <% end %>
+      <% if @listing.photo.url.nil? %>
+      <img src="https://images.pexels.com/photos/1409215/pexels-photo-1409215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="tool" class="show-page-photo">
+      <% else %>
+      <%= cl_image_tag @listing.photo %>
+      <% end %>
       <div>
         <h3> <%= @listing.description.capitalize %> </h3>
         <p> <%= @listing.user.location.capitalize %> </p>
+        <p>€<%= @listing.price %></p>
       </div>
-      <p>€<%= @listing.price %></p>
-      <% if current_user && policy(@booking).create? %>
-      <a href="#" class="book-button">Book</a>
-      <% end %>
-      <% if current_user && policy(@listing).update? %>
-      <a href="#" class="edit-button">Edit</a>
-      <% end %>
-      <%= link_to "Back", :back  %>
+      <div class="buttons-show-page">
+        <%= link_to "Back to search results", :back, class: "btn btn-primary" %>
+        <% if current_user && policy(@booking).create? %>
+        <a href="#" class="book-button btn btn-success">Book</a>
+        <% end %>
+        <% if current_user && policy(@listing).update? %>
+        <a href="#" class="edit-button btn btn-success">Edit</a>
+        <% end %>
+      </div>
     </div>
 
     <div class="listing-show-form">
@@ -32,33 +34,33 @@
         <% end %>
       </div> -->
 
-    <script>
-      function calcPrice(price) {
-        const startDate1 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(1i)]"]')[0].value;
-        const startDate2 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(2i)]"]')[0].value;
-        const startDate3 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(3i)]"]')[0].value;
-        const startDate4 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(4i)]"]')[0].value;
-        const startDate5 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(5i)]"]')[0].value;
+      <script>
+        function calcPrice(price) {
+          const startDate1 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(1i)]"]')[0].value;
+          const startDate2 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(2i)]"]')[0].value;
+          const startDate3 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(3i)]"]')[0].value;
+          const startDate4 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(4i)]"]')[0].value;
+          const startDate5 = document.querySelectorAll('.new-booking-form select[name="booking[start_date(5i)]"]')[0].value;
 
-        const endDate1 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(1i)]"]')[0].value;
-        const endDate2 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(2i)]"]')[0].value;
-        const endDate3 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(3i)]"]')[0].value;
-        const endDate4 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(4i)]"]')[0].value;
-        const endDate5 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(5i)]"]')[0].value;
+          const endDate1 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(1i)]"]')[0].value;
+          const endDate2 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(2i)]"]')[0].value;
+          const endDate3 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(3i)]"]')[0].value;
+          const endDate4 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(4i)]"]')[0].value;
+          const endDate5 = document.querySelectorAll('.new-booking-form select[name="booking[end_date(5i)]"]')[0].value;
 
 
-        const totalYear = endDate1 - startDate1;
-        const totalMonth = endDate2 - startDate2;
-        const totalDay = endDate3 - startDate3;
-        const totalHour = endDate4 - startDate4;
-        const totalMin = endDate5 - startDate5;
+          const totalYear = endDate1 - startDate1;
+          const totalMonth = endDate2 - startDate2;
+          const totalDay = endDate3 - startDate3;
+          const totalHour = endDate4 - startDate4;
+          const totalMin = endDate5 - startDate5;
 
-        const totalHours = (totalYear*12*30*24) + (totalMonth*30*24) + (totalDay*24) + (totalHour) + (totalMin/60);
+          const totalHours = (totalYear*12*30*24) + (totalMonth*30*24) + (totalDay*24) + (totalHour) + (totalMin/60);
 
-        console.log(totalHours*price);
-        document.getElementById("booking-price").innerHTML = "Total Price: " + totalHours*price;
-      }
-    </script>
+          console.log(totalHours*price);
+          document.getElementById("booking-price").innerHTML = "Total Price: " + totalHours*price;
+        }
+      </script>
 
       <div class="booking-create-form">
         <div class="new-booking-form book-form hidden">
