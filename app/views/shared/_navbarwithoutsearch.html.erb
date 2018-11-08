@@ -1,17 +1,13 @@
 <div class="navbar-main">
   <!-- Logo -->
-  <a href="/" class="navbar-main-brand fas fa-wrench fa-toolbox "></a>
+  <a href="/" class="navbar-main-brand fas fa-toolbox"> ToolBox
+  </a>
+
+
   <!-- Right Navigation -->
   <div class="navbar-tool-right hidden-xs hidden-sm">
     <div>
     <% if user_signed_in? %>
-      <%= form_tag listings_path, method: :get do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "nav-bar-search-bar",
-        placeholder: "Search Tools"
-        %>
-        <% end %>
       </div>
     <!-- Profile picture with dropdown list -->
     <div class="navbar-tool-item">

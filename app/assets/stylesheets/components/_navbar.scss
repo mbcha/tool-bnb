@@ -18,6 +18,12 @@
   height: 30px;
   color:white;
   font-size: 30px;
+
+}
+
+.navbar-main-brand:hover {
+  text-decoration: none;
+  color: $orange;
 }
 
 /* User Avatar */
@@ -36,11 +42,23 @@
 }
 
 #signup {
-  color: orange;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
 }
 
 #signup:hover {
-  color: #da552f;
+  color: $orange;
+}
+
+#login {
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+#login:hover {
+  color: $orange;
 }
 
 /* Basic navbar item */
@@ -100,4 +118,12 @@
   position: absolute;
   left: 45%;
   top: 1%;
+}
+
+.nav-bar-search-bar {
+  background-color: rgba(255,255,255, 0.9);
+  text-align: center;
+  padding: 1px 1px;
+  width: 160px;
+  border-radius: 3px;
 }
