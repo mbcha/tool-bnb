@@ -88,11 +88,11 @@
         <h2 class="btn btn-danger">Please arrange payment directly with the other party.</h2>
       </div>
       <div class="listings-row">
-        <% if @user.bookings.nil? %>
+        <% if @user.bookings.nil? && @booking.empty? %>
         <div class="listings-card">
           <h3>You have no tools advertised yet.</h3>
         </div>
-        <% else %>
+        <% end %>
         <% @user.bookings.each do |booking| %>
         <div class="listings-card">
           <% if current_user != booking.listing.user %>
@@ -125,7 +125,40 @@
           </div>
         </div>
         <% end %>
+
+
+
+        <% @bookings.each do |booking| %>
+        <div class="listings-card">
+          <div class="listings-card-category">
+            YOUR TOOL WAS BOOKED
+          </div>
+          <div class="listings-card-description">
+            <%= booking[0].listing.category.capitalize %>
+          </div>
+          <div class="listings-card-location">
+            <%= booking[0].status.upcase %>
+          </div>
+          <div class="booking-status">
+            <%= form_for(booking[0]) do |f| %>
+            <%= f.hidden_field :status, value: 'confirmed' %>
+            <%= f.submit :confirm, class: 'status-btn btn btn-success' %>
+            <% end %>
+            <%= form_for(booking[0]) do |f| %>
+            <%= f.hidden_field :status, value: 'declined' %>
+            <%= f.submit :decline, class: 'status-btn btn btn-danger' %>
+            <% end %>
+          </div>
+          <div class="listings-card-price">
+            €<%= booking[0].total_price.to_f.round(2) %>
+          </div>
+          <div>
+          </div>
+        </div>
         <% end %>
+
+
+
       </div>
     </div>
 
