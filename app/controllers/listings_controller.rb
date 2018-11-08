@@ -4,6 +4,12 @@ class ListingsController < ApplicationController
 
   def index
     @listings = policy_scope(Listing)
+
+    if params[:query].present?
+      @listings = Listing.where("category ILIKE ?", "%#{params[:query]}%")
+    else
+      @listings = Listing.all
+    end
   end
 
   def show

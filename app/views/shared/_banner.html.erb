@@ -3,7 +3,15 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');">
   <div class="banner-content">
     <h1>Find a Tool</h1>
-    <p>PUT FORM HERE (views/shared/banner) </p>
-    <%= link_to "Start Now", listings_path, class: "btn btn-primary btn-lg"  %>
+    <div>
+      <%= form_tag listings_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+        placeholder: "Find a tool"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
