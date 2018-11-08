@@ -57,8 +57,8 @@
       <div class="booking-create-form">
         <div class="new-booking-form book-form hidden">
           <%= simple_form_for([@listing, @booking]) do |f| %>
-          <%= f.input :start_date, input_html: { id: 'start-date', onClick: "calcPrice(#{@listing.price})" } %>
-          <%= f.input :end_date, input_html: { id: 'end-date', onClick: "calcPrice(#{@listing.price})" } %>
+          <%= f.input :start_date, input_html: { id: 'start-date', onClick: "calcPrice(#{@listing.price})" }, minute_step: 15 %>
+          <%= f.input :end_date, input_html: { id: 'end-date', onClick: "calcPrice(#{@listing.price})" }, minute_step: 15 %>
           <p id="booking-price">Total Price</p>
           <a href="#" class="cancel-button-booking btn btn-primary">Cancel</a>
           <%= f.submit data: {confirm: 'Confirm this booking?' }, class: "btn btn-danger" %>
