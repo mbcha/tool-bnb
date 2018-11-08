@@ -10,6 +10,8 @@ function changeTabs() {
 
 
   if (firstTab) {
+
+    // stays on the bookings tab if redirect was passed ending in #bookings
     $(document).ready(function () {
       if(window.location.href.indexOf("#bookings") > -1) {
         firstTab.classList.remove('active');
@@ -18,6 +20,19 @@ function changeTabs() {
         userListings.classList.add('hidden');
         lastTab.classList.add('active');
         userBookings.classList.remove('hidden');
+        addForm.classList.add('hidden');
+      }
+    });
+
+    // stays on the listings tab if redirect was passed ending in #listings
+    $(document).ready(function () {
+      if(window.location.href.indexOf("#listings") > -1) {
+        firstTab.classList.remove('active');
+        userDetails.classList.add('hidden');
+        secondTab.classList.add('active');
+        userListings.classList.remove('hidden');
+        lastTab.classList.remove('active');
+        userBookings.classList.add('hidden');
         addForm.classList.add('hidden');
       }
     });

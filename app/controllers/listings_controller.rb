@@ -16,7 +16,6 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @booking = Booking.new
-    @booking_message = "The total price for this booking will be: #{@booking.total_price}. Do you want to continue?"
   end
 
 
@@ -28,7 +27,7 @@ class ListingsController < ApplicationController
     authorize @listing
     @listing.user = current_user
     if @listing.save
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user) + '#listings'
     else
       render :new
     end
@@ -49,7 +48,7 @@ class ListingsController < ApplicationController
 
   def destroy
     @listing.destroy
-    redirect_to listings_path
+    redirect_to user_path(current_user) + '#listings'
   end
 
   private

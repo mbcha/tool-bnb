@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking.total_price = @booking.listing.price.to_f * ((@booking.end_date - @booking.start_date)/3600)
 
     if @booking.save
-      redirect_to current_user
+      redirect_to user_path(current_user) + "#bookings"
     else
       render :new
     end
