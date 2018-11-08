@@ -10,24 +10,26 @@
 }
 
 .listing-show-main-container {
-  background-color: #002139;
+  background-color: rgba(255, 255, 255, .9);
+  padding: 50px;
+  margin: 15px 15px;
+  position: relative;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px rgba(0, 33, 57, 0.8);
   opacity: 0.9;
   width: 85%;
-  height: 80vh;
+  height: 70vh;
   margin-top: 10%;
-  border: 2px solid rgba(255,255,255, 0.9);
   display: flex;
 }
 
 .listing-show-pic {
   flex-grow: 1;
-  background-color: #002139;
   width: 35%;
 }
 
 .listing-show-form {
   flex-grow: 1;
-  background-color: #002139;
   width: 35%;
   display: flex;
   height: 85%;
