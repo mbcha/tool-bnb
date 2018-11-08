@@ -48,7 +48,9 @@ function changeTabs() {
       firstTab.classList.remove('active');
       userDetails.classList.add('hidden');
       secondTab.classList.add('active');
-      userListings.classList.toggle('hidden');
+      if (!userListings.classList.contains('hidden')) {
+        userListings.classList.toggle('hidden');
+      }
       lastTab.classList.remove('active');
       userBookings.classList.add('hidden');
       addForm.classList.toggle('hidden');
