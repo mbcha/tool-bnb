@@ -11,33 +11,33 @@
         <%= submit_tag "Search", class: "btn btn-danger" %>
         <% end %>
       </div>
-    <h1>List of Tools</h1>
+      <h1 class="results-title">Results</h1>
 
-    <div class="row listings-row">
-      <% @listings.each do |listing| %>
-      <div class="listings-card">
+      <div class="row listings-row">
+        <% @listings.each do |listing| %>
+        <div class="listings-card">
 
-        <%= link_to "Book", listing, class: "listings-card-btn" %>
+          <%= link_to "Book", listing, class: "listings-card-btn" %>
 
-        <div class="listings-card-category">
-          <%= listing.category.capitalize %>
+          <div class="listings-card-category">
+            <%= listing.category.capitalize %>
+          </div>
+          <div class="listings-card-price">
+            €<%= listing.price %> per hour
+          </div>
+          <div class="listings-card-description">
+            <%= listing.description.capitalize.first(50) %>...
+          </div>
+          <div class="listings-card-location">
+            <%= listing.user.location.upcase %>
+          </div>
+          <% if listing.photo.url.nil? %>
+          <img src="https://images.pexels.com/photos/1409215/pexels-photo-1409215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="tool" class="listing-card-photo">
+          <% else %>
+          <%= cl_image_tag listing.photo, height: 150, width: 150, crop: :fill, class: "listing-card-photo" %>
+          <% end %>
         </div>
-        <div class="listings-card-price">
-          €<%= listing.price %> per hour
-        </div>
-        <div class="listings-card-description">
-          <%= listing.description.capitalize.first(50) %>...
-        </div>
-        <div class="listings-card-location">
-          <%= listing.user.location.capitalize %>
-        </div>
-        <% if listing.photo.url.nil? %>
-        <img src="https://images.pexels.com/photos/1409215/pexels-photo-1409215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="tool" class="listing-card-photo">
-        <% else %>
-        <%= cl_image_tag listing.photo, height: 150, width: 150, crop: :fill, class: "listing-card-photo" %>
         <% end %>
       </div>
-      <% end %>
     </div>
   </div>
-</div>
