@@ -108,9 +108,9 @@
           </div>
           <div class="listings-card-date">
             <p>From: <%= booking.start_date.day %>-<%= booking.start_date.mon %>-<%= booking.start_date.year %>
-              <%= booking.start_date.hour %>:<%= booking.start_date.min %></p>
+              <%= booking.start_date.hour %>:<%= booking.start_date.min %><%= "0" if booking.start_date.min == 0 %></p>
               <p>Until: <%= booking.end_date.day %>-<%= booking.end_date.mon %>-<%= booking.end_date.year %>
-                <%= booking.end_date.hour %>:<%= booking.end_date.min %></p>
+                <%= booking.end_date.hour %>:<%= booking.end_date.min %><%= "0" if booking.start_date.min == 0 %></p>
               </div>
               <div class="listings-card-price">
                 €<%= booking.total_price.to_f.round(2) %>
@@ -141,9 +141,9 @@
               </div>
               <div class="listings-card-date">
                 <p>From: <%= booking[0].start_date.day %>-<%= booking[0].start_date.mon %>-<%= booking[0].start_date.year %>
-                  <%= booking[0].start_date.hour %>:<%= booking[0].start_date.min %></p>
+                  <%= booking[0].start_date.hour %>:<%= booking[0].start_date.min %><%= "0" if booking[0].start_date.min == 0 %></p>
                   <p>Until: <%= booking[0].end_date.day %>-<%= booking[0].end_date.mon %>-<%= booking[0].end_date.year %>
-                    <%= booking[0].end_date.hour %>:<%= booking[0].end_date.min %></p>
+                    <%= booking[0].end_date.hour %>:<%= booking[0].end_date.min %><%= "0" if booking[0].start_date.min == 0 %></p>
                   </div>
                   <div class="booking-status">
                     <%= form_for(booking[0]) do |f| %>
