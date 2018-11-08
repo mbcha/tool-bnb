@@ -54,31 +54,44 @@
         }
       </script>
 
-      <div class="booking-create-form">
-        <div class="new-booking-form book-form hidden">
-          <%= simple_form_for([@listing, @booking]) do |f| %>
-          <%= f.input :start_date, input_html: { id: 'start-date', onClick: "calcPrice(#{@listing.price})" }, minute_step: 15 %>
-          <%= f.input :end_date, input_html: { id: 'end-date', onClick: "calcPrice(#{@listing.price})" }, minute_step: 15 %>
-          <p id="booking-price">Total Price</p>
-          <a href="#" class="cancel-button-booking btn btn-primary">Cancel</a>
-          <%= f.submit data: {confirm: 'Confirm this booking?' }, class: "btn btn-danger" %>
-          <% end %>
+      <div class="booking-form-parent new-booking-form book-form hidden">
+        <div class="booking-form-child-one">
+          <div class="booking-create-form">
+            <div class="">
+              <%= simple_form_for([@listing, @booking]) do |f| %>
+              <%= f.input :start_date, input_html: { id: 'start-date', onClick: "calcPrice(#{@listing.price})" }, minute_step: 15 %>
+            </div>
+          </div>
         </div>
+        <div class="booking-form-child-two">
+          <div class="booking-create-form">
+            <div class="">
+              <%= f.input :end_date, input_html: { id: 'end-date', onClick: "calcPrice(#{@listing.price})" }, minute_step: 15 %>
+              <p id="booking-price">Total Price</p>
+              <div class="flex-btn"><a href="#" class="cancel-button-booking btn btn-primary">Cancel</a>
+              <%= f.submit "Book", data: {confirm: 'Confirm this booking?' }, class: "btn btn-danger btn-custom-width" %> </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <div class="booking-edit-form">
-        <div class="edit-form hidden">
-          <%= simple_form_for(@listing) do |f| %>
-          <%= f.input :category %>
-          <%= f.input :description %>
-          <%= f.input :price %>
-          <%= f.input :photo %>
-          <%= f.input :photo_cache, as: :hidden %>
-          <a href="#" class="cancel-button-edit btn btn-primary">Cancel</a>
-          <%= f.submit class: "btn btn-danger" %>
-          <% end %>
+        <div class="booking-edit-form">
+          <div class="edit-form hidden">
+            <%= simple_form_for(@listing) do |f| %>
+            <%= f.input :category %>
+            <%= f.input :description %>
+            <%= f.input :price %>
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
+            <a href="#" class="cancel-button-edit btn btn-primary">Cancel</a>
+            <%= f.submit class: "btn btn-danger" %>
+            <% end %>
+          </div>
         </div>
-      </div>
+
+
     </div>
   </div>
 
