@@ -21,7 +21,6 @@
     <div class="listing-show-form">
       <div class="listing-show-pic">
         <% if @listing.photo == nil %>
-        <%= raise %>
         <% image_tag "tool", alt: "fuck max" %>
         <% else %>
         <%= cl_image_tag @listing.photo %>
