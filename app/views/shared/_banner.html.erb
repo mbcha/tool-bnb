@@ -1,9 +1,9 @@
 <!-- banner component -->
 
 <div class="banner" style="background-image: url('https://images.pexels.com/photos/175039/pexels-photo-175039.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
-  <div class="banner-content">
-    <h1>Build Your Project</h1>
-    <div>
+  <div class="">
+    <div class = "title-banner-main">Build Your Project</div>
+    <div class = "banner-search-bar">
       <%= form_tag listings_path, class: "form-flex", method: :get do %>
       <%= text_field_tag :query,
       params[:query],
