@@ -21,7 +21,7 @@
           <%= listing.user.location.capitalize %>
         </div>
         <% if listing.photo.url.nil? %>
-        <img src="https://images.pexels.com/photos/1409215/pexels-photo-1409215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="listing-card-photo">
+        <img src="https://images.pexels.com/photos/1409215/pexels-photo-1409215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="tool" class="listing-card-photo">
         <% else %>
         <%= cl_image_tag listing.photo, height: 150, width: 150, crop: :fill, class: "listing-card-photo" %>
         <% end %>
