@@ -4,13 +4,13 @@
   <div class="banner-content">
     <h1>Find a Tool</h1>
     <div>
-      <%= form_tag listings_path, method: :get do %>
+      <%= form_tag listings_path, class: "form-flex", method: :get do %>
       <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
+      class: "form-control form-text-center",
         placeholder: "Find a tool"
         %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <%= submit_tag "Search", class: "btn btn-danger" %>
         <% end %>
       </div>
     </div>

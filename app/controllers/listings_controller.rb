@@ -1,6 +1,7 @@
 class ListingsController < ApplicationController
   before_action :find_listing, only: [:show, :new, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
+  layout :resolve_layout
 
   def index
     @listings = policy_scope(Listing)
@@ -17,6 +18,7 @@ class ListingsController < ApplicationController
     @booking = Booking.new
     @booking_message = "The total price for this booking will be: #{@booking.total_price}. Do you want to continue?"
   end
+
 
   def new
   end
@@ -59,5 +61,9 @@ class ListingsController < ApplicationController
 
   def listing_params
     params.require(:listing).permit(:category, :description, :price, :user_id, :photo)
+  end
+
+  def resolve_layout
+    action_name == 'index' ? 'another_layout' : 'application'
   end
 end
