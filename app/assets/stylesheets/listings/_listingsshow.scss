@@ -9,10 +9,10 @@
 }
 
 .listing-show-main-container {
-  background-color: rgba(255, 255, 255, .9);
-  padding: 30px 0;
-  margin-bottom: 40px;
-  margin-top: 120px !important;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0;
+  margin-bottom: 70px;
+  margin-top: 95px !important;
   position: relative;
   border-radius: 4px;
   box-shadow: 2px 2px 5px rgba(0, 33, 57, 0.8);
@@ -33,14 +33,12 @@
   flex-grow: 1;
   width: 35%;
   display: flex;
-  min-height: 75%;
-  height: auto;
   opacity: 1 !important;
   justify-content: center;
   align-items: center;
   img{
     height: 70vh;
-  opacity: 1 !important;
+    opacity: 1 !important;
   }
 }
 
@@ -54,7 +52,7 @@
   align-items: center;
   border-right: 2px solid rgba(255,255,255, 0.9);
   h3 {
-    max-width: 650px;
+    max-width: 580px;
   }
 }
 
