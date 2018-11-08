@@ -7,7 +7,7 @@
       <% if @listing.photo.url.nil? %>
       <img src="https://images.pexels.com/photos/1409215/pexels-photo-1409215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="tool" class="show-page-photo">
       <% else %>
-      <%= cl_image_tag @listing.photo %>
+      <%= cl_image_tag @listing.photo, class: "show-page-photo" %>
       <% end %>
       <h3> <%= @listing.description.capitalize %> </h3>
       <p> <%= @listing.user.location.capitalize %> </p>

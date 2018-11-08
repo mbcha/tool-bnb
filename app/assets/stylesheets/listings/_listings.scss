@@ -76,12 +76,19 @@
   color: white;
   position: absolute;
   right: 7%;
-  bottom: 10%;
-  padding: 5px 15px;
+  bottom: 8%;
+  padding: 7px 15px;
   border-radius: 3px;
   background-color: $red;
   text-decoration: none;
 }
+.delete-listing {
+  z-index: 2;
+  position: absolute;
+  bottom: 8%;
+  right: 25%;
+}
+
 
 .listings-card-btn:hover {
   color: white;
@@ -96,4 +103,17 @@
   border-radius: 75px;
   height: 100px;
   width: 100px;
+}
+.results-title {
+  margin-top: 80px;
+}
+.booking-status {
+  display: flex;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+.status-btn {
+  margin-left: 10px;
+  margin-bottom: 10px;
 }

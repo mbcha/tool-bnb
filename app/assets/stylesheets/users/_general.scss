@@ -16,16 +16,13 @@
 
 .user-details {
   color: white;
-  background-color: #002139;
+  background-color: rgba(255, 255, 255, .9);
   opacity: 0.9;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 80vh;
-  border-radius: 0px 3px 3px 3px;
-  border-left: 2px solid rgba(255,255,255, 0.9);
-  border-right: 2px solid rgba(255,255,255, 0.9);
-  border-bottom: 2px solid rgba(255,255,255, 0.9);
+  height: 70vh;
+  border-radius: 10px;
   position: relative;
 }
 
@@ -44,18 +41,7 @@
 }
 
 .user-my-listings {
-  color: white;
-  background-color: #002139;
-  opacity: 0.9;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 80vh;
-  border-radius: 0px 3px 3px 3px;
-  border-left: 2px solid rgba(255,255,255, 0.9);
-  border-right: 2px solid rgba(255,255,255, 0.9);
-  border-bottom: 2px solid rgba(255,255,255, 0.9);
-  position: relative;
+  margin: 0 auto;
 }
 
 .listing-title {
@@ -78,49 +64,43 @@
 
 .user-my-bookings {
   color: white;
-  background-color: #002139;
   opacity: 0.9;
   display: flex;
   flex-direction: column;
-
   align-items: center;
-  height: 80vh;
-  border-radius: 0px 3px 3px 3px;
-  border-left: 2px solid rgba(255,255,255, 0.9);
-  border-right: 2px solid rgba(255,255,255, 0.9);
-  border-bottom: 2px solid rgba(255,255,255, 0.9);
+  min-height: 70vh;
+  height: auto;
+  border-radius: 10px;
   position: relative;
 }
 
 .user-listings-form {
-  color: white;
-  background-color: #002139;
+  text-align: center;
+  color: #494949;
+  background-color: rgba(255, 255, 255, .9);
+  padding: 20px;
   opacity: 0.9;
   display: flex;
   justify-content: center;
-
+  margin: 40px 0;
   align-items: center;
-  height: 80vh;
-  border-radius: 0px 3px 3px 3px;
-  border-left: 2px solid rgba(255,255,255, 0.9);
-  border-right: 2px solid rgba(255,255,255, 0.9);
-  border-bottom: 2px solid rgba(255,255,255, 0.9);
+  border-radius: 10px;
   position: relative;
-}
-
-.new-listing-btn {
-  background: $red;
-  padding: 3px 7px;
-  height: 35px;
-  margin-top: 5px;
-  margin-left: auto;
-  border-radius: 3px;
-  color: white;
+  min-height: 70vh;
+  width: 600px;
+  height: auto;
 }
 
 .delete-listing {
   display: flex;
   flex-direction: row;
+}
+.add-new-tool {
+  margin: 50px;
+  text-align: center;
+}
+.tab-second {
+  padding-left: 55px;
 }
 
 
