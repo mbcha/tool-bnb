@@ -46,16 +46,12 @@ img{
   border-radius: 4px;
 }
 
-//  .book-button:hover {
-//   opacity: 1;
-//   background: #3ac162;
-//   text-decoration: none;
-//   color: white;
-//   opacity: 1;
-// }
-
-.book-button, .edit-button {
-  margin: 10px;
+.book-button {
+  margin-left: 10px;
+}
+.edit-button {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .row{
