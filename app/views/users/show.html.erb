@@ -68,13 +68,13 @@
     </div>
 
     <div class="user-listings-form hidden">
-      <div>
+      <div class="add-listing-form">
         <h3>Add a new listing</h3>
 
         <%= simple_form_for(Listing.new) do |f| %>
-        <%= f.input :category %>
+        <%= f.input :category, label: "Name" %>
         <%= f.input :description %>
-        <%= f.input :price %>
+        <%= f.input :price, label: "Price Per Hour" %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
         <a href="#" class="cancel-new btn btn-primary">Cancel</a>
