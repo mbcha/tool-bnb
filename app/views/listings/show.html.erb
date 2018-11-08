@@ -9,11 +9,9 @@
       <% else %>
       <%= cl_image_tag @listing.photo %>
       <% end %>
-      <div>
-        <h3> <%= @listing.description.capitalize %> </h3>
-        <p> <%= @listing.user.location.capitalize %> </p>
-        <p>€<%= @listing.price %></p>
-      </div>
+      <h3> <%= @listing.description.capitalize %> </h3>
+      <p> <%= @listing.user.location.capitalize %> </p>
+      <p>€<%= @listing.price %></p>
       <div class="buttons-show-page">
         <%= link_to "Back to search results", :back, class: "btn btn-primary" %>
         <% if current_user && policy(@booking).create? %>
