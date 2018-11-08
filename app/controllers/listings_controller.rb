@@ -40,7 +40,7 @@ class ListingsController < ApplicationController
     authorize @listing
     @listing.update(listing_params)
     if @listing.save
-      redirect_to @listing + '#listings'
+      redirect_to user_path(current_user) + '#listings'
     else
       render :new
     end
