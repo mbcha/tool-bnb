@@ -6,6 +6,15 @@
   padding: 30px;
 }
 
+.container-devise-form-wide {
+  width: 85%;
+  background-color: rgba(255, 255, 255, .9);
+  padding: 20px;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+}
+
 .devise-form-bg-img {
   background-image: url(https://images.pexels.com/photos/175039/pexels-photo-175039.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   background-size: cover;
@@ -15,4 +24,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.btn-primary{
+  margin-top: 7px;
 }
