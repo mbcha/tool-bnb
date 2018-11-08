@@ -67,7 +67,7 @@
           <%= f.input :end_date, input_html: { id: 'end-date', onClick: "calcPrice(#{@listing.price})" } %>
           <p id="booking-price">Total Price</p>
           <a href="#" class="cancel-button-booking btn btn-primary">Cancel</a>
-          <%= f.submit data: {confirm: @booking_message }, class: "btn btn-danger" %>
+          <%= f.submit data: {confirm: 'Confirm this booking?' }, class: "btn btn-danger" %>
           <% end %>
         </div>
       </div>

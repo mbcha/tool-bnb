@@ -2,10 +2,10 @@
 
   <div class="main-container">
     <div class="tabs">
-        <a href="#" class="tab tab-first active">Profile</a>
-        <a href="#" class="tab tab-second">Listings</a>
-        <a href="#" class="tab tab-last">Bookings</a>
-        <a href="#" class="new-listing-btn">New Listing</a>
+      <a href="#" class="tab tab-first active">Profile</a>
+      <a href="#" class="tab tab-second">Listings</a>
+      <a href="#" class="tab tab-last">Bookings</a>
+      <a href="#" class="new-listing-btn">New Listing</a>
     </div>
 
     <div class="user-details">
@@ -36,11 +36,16 @@
             <%= listing.price %>
           </div>
           <div>
-            <% if listing.available %>
-            <p>Available</p>
-            <% else %>
-            <p>Booked</p>
-            <% end %>
+            <div class="delete-listing">
+              <%= link_to 'Delete', listing_path(listing),
+              method: :delete, class: 'btn btn-warning',
+              data: { confirm: "Are you sure?" } %>
+              <% if listing.available %>
+                <p>Available</p>
+              <% else %>
+                <p>Booked</p>
+              <% end %>
+            </div>
           </div>
           <% end %>
         </li>
@@ -71,19 +76,19 @@
         </li>
         <% @user.bookings.each do |booking| %>
         <li class="each-listing">
-          <div>
-            <%= booking.status %>
-            <%= form_for(booking) do |f| %>
-                <%= f.hidden_field :status, value: 'confirmed' %>
-                <%= f.submit :confirm, class: 'btn btn-success' %>
-            <% end %>
-            <%= form_for(booking) do |f| %>
-                <%= f.hidden_field :status, value: 'declined' %>
-                <%= f.submit :decline, class: 'btn btn-danger' %>
-            <% end %>
-            <!-- <a href="#" class="confirm-booking btn btn-success">Confirm</a> -->
-            <!-- <a href="#" class="decline-booking btn btn-danger">Decline</a> -->
-          </div>
+            <div>
+              <%= booking.status %>
+              <% if current_user == booking.listing.user %>
+                <%= form_for(booking) do |f| %>
+                  <%= f.hidden_field :status, value: 'confirmed' %>
+                  <%= f.submit :confirm, class: 'btn btn-success' %>
+                <% end %>
+                <%= form_for(booking) do |f| %>
+                  <%= f.hidden_field :status, value: 'declined' %>
+                  <%= f.submit :decline, class: 'btn btn-danger' %>
+                <% end %>
+              <% end %>
+            </div>
           <div>
             <%= booking.total_price %>
           </div>
