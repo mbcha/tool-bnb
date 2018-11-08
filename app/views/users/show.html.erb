@@ -8,11 +8,16 @@
     </div>
 
     <div class="user-details">
-      <div class="user-details-top">
-        <h3><%= @user.name %>'s Profile</h3>
+      <div class="user-info">
+        <h2><%= @user.name.capitalize %> </h2>
+        <% if @user.photo.url.nil? %>
+        <img src="https://images.pexels.com/photos/1409215/pexels-photo-1409215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="tool" class="show-page-photo">
+        <% else %>
+        <%= cl_image_tag @user.photo, class: "show-page-photo" %>
+        <% end %>
+        <h3> <%= @user.location.capitalize %> </h3>
         <p><%= link_to "Edit my Details", edit_user_registration_path, class: "btn btn-danger" %></p>
       </div>
-      <p>Location: <%= @user.location %></p>
     </div>
 
     <div class="user-my-listings hidden">
@@ -90,11 +95,11 @@
         <% else %>
         <% @user.bookings.each do |booking| %>
         <div class="listings-card">
-            <% if current_user != booking.listing.user %>
-            <div class="listings-card-category">
-              BOOKED BY YOU
-            </div>
-            <% end %>
+          <% if current_user != booking.listing.user %>
+          <div class="listings-card-category">
+            BOOKED BY YOU
+          </div>
+          <% end %>
           <div class="listings-card-description">
             <%= booking.listing.category.capitalize %>
           </div>

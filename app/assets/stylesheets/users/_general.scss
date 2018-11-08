@@ -16,7 +16,6 @@
 
 .user-details {
   color: white;
-  background-color: rgba(255, 255, 255, .9);
   opacity: 0.9;
   display: flex;
   justify-content: space-around;
@@ -26,6 +25,23 @@
   position: relative;
 }
 
+.user-info {
+  text-align: center;
+  color: #494949;
+  background-color: rgba(255, 255, 255, .9);  display: flex;
+  padding: 20px;
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 40px 0;
+  align-items: center;
+  border-radius: 10px;
+  position: relative;
+  min-height: 60vh;
+  width: 600px;
+  height: auto;
+}
 .user-details-top {
   position: absolute;
   top: 10px;
@@ -42,6 +58,8 @@
 
 .user-my-listings {
   margin: 0 auto;
+  min-height: 70vh;
+  height: auto;
 }
 
 .listing-title {
