@@ -5,6 +5,10 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
+  def update?
+    user == record.user
+  end
+
   def new?
     create?
   end

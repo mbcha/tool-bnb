@@ -73,6 +73,16 @@
         <li class="each-listing">
           <div>
             <%= booking.status %>
+            <%= form_for(booking) do |f| %>
+                <%= f.hidden_field :status, value: 'confirmed' %>
+                <%= f.submit :confirm, class: 'btn btn-success' %>
+            <% end %>
+            <%= form_for(booking) do |f| %>
+                <%= f.hidden_field :status, value: 'declined' %>
+                <%= f.submit :decline, class: 'btn btn-danger' %>
+            <% end %>
+            <!-- <a href="#" class="confirm-booking btn btn-success">Confirm</a> -->
+            <!-- <a href="#" class="decline-booking btn btn-danger">Decline</a> -->
           </div>
           <div>
             <%= booking.total_price %>
