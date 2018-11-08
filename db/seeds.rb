@@ -31,7 +31,7 @@ l.user = u
 l.save!
 
 l = Listing.new(
-  category: "Hammer",
+  category: "Sludge Hammer",
   description: "Do you have something you need to nail? This hammer is HUGE!",
   price: 13)
 l.user = u
