@@ -19,6 +19,7 @@
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          
           <% end %>
         </div>
         <div class="flex-child-two-form">
@@ -34,9 +35,9 @@
           required: true,
           input_html: { autocomplete: "current-password" } %>
 
-
           <div class="form-actions">
             <%= f.button :submit, "Update", class: "btn btn-danger" %>
+
 
             <% end %>
           </div>
