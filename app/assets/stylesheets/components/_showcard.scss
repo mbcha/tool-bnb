@@ -47,32 +47,62 @@ img{
 }
 
 .book-button {
-  margin-left: 10px;
 }
 .edit-button {
   margin-left: 10px;
   margin-right: 10px;
 }
 
-.row{
+.row {
   display:flex;
   align-items:center;
   justify-content:center;
   color:white;
 }
 
-.book-form, .edit-form{
-  max-width: 300px;
+.booking-form-parent {
+  display: flex;
+  box-shadow: 1px 1px 1px rgba(0, 33, 57, 0.7);
+
+}
+
+.book-form{
   padding: 10px;
-  border-radius: 3%;
-  border:2px solid rgba(255,255,255, 0.9);
-  background-color: #D74E09;
-  opacity:0.9;
-  color:white;
-  box-shadow: 5px 5px 5px rgba(0, 33, 57, 0.8);
+  border-radius: 3px;
+  background-color: rgba(152,152,152, 0.9);
+  color: black;
+}
+
+
+.edit-form{
+
+  padding: 10px;
+  border-radius: 3px;
+  background-color: rgba(152,152,152, 0.9);
+  color: black;
+}
+
+.booking-form-child-one{
+  flex-grow: 1;
+  width: 50%;
+}
+
+.booking-form-child-two{
+  flex-grow: 1;
+  width: 50%;
+  text-align: center;
+}
+
+.flex-btn {
+  display: flex;
+
 }
 
 #submit-button{
   color:black;
+}
+
+.btn-custom-width {
+  width: 100px;
 }
 
