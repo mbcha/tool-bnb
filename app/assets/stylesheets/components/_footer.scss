@@ -1,10 +1,12 @@
 .footer {
-  background: #3C393C;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  background: #28282B;
+  transition: all 0.3s ease;
+  height: 70px;
   background-opacity: 0.75;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
   padding: 0px 50px;
   color: #FAA916;
 }
