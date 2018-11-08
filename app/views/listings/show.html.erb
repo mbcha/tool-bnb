@@ -24,13 +24,7 @@
     </div>
 
     <div class="listing-show-form">
-      <!-- <div class="listing-show-pic">
-        <% if @listing.photo.url.nil? %>
-        <% image_tag "tool", alt: "fuck max" %>
-        <% else %>
-        <%= cl_image_tag @listing.photo %>
-        <% end %>
-      </div> -->
+      <%= image_tag "map", class: "listing-show-pic" %>
 
       <script>
         function calcPrice(price) {
