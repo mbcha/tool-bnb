@@ -24,8 +24,8 @@
 }
 
 .listing-show-pic {
-  flex-grow: 1;
-  width: 35%;
+  opacity: 1 !important;
+  background: cover;
 }
 
 .listing-show-form {
@@ -34,6 +34,13 @@
   display: flex;
   min-height: 75%;
   height: auto;
+  opacity: 1 !important;
+  justify-content: center;
+  align-items: center;
+  img{
+    height: 70vh;
+  opacity: 1 !important;
+  }
 }
 
 .listing-show-info {
@@ -45,6 +52,9 @@
   justify-content: center;
   align-items: center;
   border-right: 2px solid rgba(255,255,255, 0.9);
+  h3 {
+    max-width: 700px;
+  }
 }
 
 .edit-button:hover{
