@@ -1,5 +1,16 @@
 <div class="listings-bg-img" style="background-image: url('https://images.pexels.com/photos/175039/pexels-photo-175039.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
   <div class="listings-container">
+    <!-- search form -->
+    <div class = "form-index-width">
+      <%= form_tag listings_path, class: "form-flex", method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control form-text-center",
+        placeholder: "Find a tool"
+        %>
+        <%= submit_tag "Search", class: "btn btn-danger" %>
+        <% end %>
+      </div>
     <h1>List of Tools</h1>
 
     <div class="row listings-row">
