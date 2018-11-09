@@ -68,6 +68,19 @@
   position: absolute;
   top: 34%;
   left: 10%;
+  color: #232C41;
+  text-decoration: none;
+  &:hover {
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+.bookings-card-category {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  font-size: 25px;
   color: black;
 }
 

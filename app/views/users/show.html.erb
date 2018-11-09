@@ -96,12 +96,12 @@
         <% @user.bookings.each do |booking| %>
         <div class="listings-card">
           <% if current_user != booking.listing.user %>
-          <div class="listings-card-category">
+          <div class="bookings-card-category">
             BOOKED BY YOU
           </div>
           <% end %>
           <div class="listings-card-description">
-            <%= booking.listing.category.capitalize %>
+            <%= link_to booking.listing.category.capitalize, listing_path(booking.listing) %>
           </div>
           <div class="listings-card-location">
             <%= booking.status.upcase %>
@@ -130,11 +130,11 @@
 
             <% @bookings.each do |booking| %>
             <div class="listings-card">
-              <div class="listings-card-category">
+              <div class="bookings-card-category">
                 YOUR TOOL WAS BOOKED
               </div>
               <div class="listings-card-description">
-                <%= booking[0].listing.category.capitalize %>
+                <%= link_to booking[0].listing.category.capitalize, listing_path(booking[0].listing) %>
               </div>
               <div class="listings-card-location">
                 <%= booking[0].status.upcase %>
