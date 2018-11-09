@@ -15,6 +15,7 @@
 
   z-index: 10;
 
+
 }
 /* Logo */
 .navbar-main-brand {
@@ -82,11 +83,21 @@
 
 /* Dropdown menu */
 .navbar-tool-dropdown-menu {
+  // visibility: hidden;
   margin-top: 15px;
   box-shadow: 1px 1px 4px #orange;
   border-color: orange;
   background: rgba(0,0,0,0.4);
+  transition: all 0.3s;
+  opacity: 1;
+  animation: fade 0.5s linear;
 }
+
+@keyframes fade {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
 .navbar-tool-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: bold !important;
@@ -98,7 +109,7 @@
 }
 .navbar-tool-dropdown-menu li > a:hover {
   background: transparent !important;
-  color: black !important;
+  color: #FAA916 !important;
 }
 .navbar-tool-dropdown-menu:before {
   content: ' ';
@@ -116,8 +127,6 @@
 .nav-bar-relative {
   position: relative;
 }
-
-
 
 .nav-bar-search-bar {
   background-color: rgba(255,255,255, 0.9);
