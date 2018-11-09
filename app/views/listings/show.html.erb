@@ -98,9 +98,8 @@
       </div>
 
 
-
       <div class="booking-edit-form">
-        <div class="edit-form">
+        <div class="new-message-form hidden">
           <%= simple_form_for([@listing, Message.new]) do |f| %>
           <%= f.input :title %>
           <%= f.input :content %>
