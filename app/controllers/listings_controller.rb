@@ -4,12 +4,14 @@ class ListingsController < ApplicationController
   layout :resolve_layout
 
   def index
-    @listings = policy_scope(Listing)
-
-    if params[:query].present?
-      @listings = Listing.where("category ILIKE ?", "%#{params[:query]}%")
+    if params[:query].present? && current_user
+      @listings = policy_scope(Listing).where("category ILIKE ?", "%#{params[:query]}%").where.not(user: current_user)
+    elsif params[:query].present?
+      @listings = policy_scope(Listing).where("category ILIKE ?", "%#{params[:query]}%")
+    elsif current_user
+      @listings = policy_scope(Listing).where.not(user: current_user)
     else
-      @listings = Listing.all
+      @listings = policy_scope(Listing)
     end
   end
 
