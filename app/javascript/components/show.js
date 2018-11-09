@@ -167,3 +167,29 @@ function openForms() {
 }
 
 export { openForms };
+
+// function changeMessageStatus() {
+//   const markAsRead = document.querySelector('.mark-as-read');
+
+//   if (markAsRead) {
+//     markAsRead.addEventListener('click', (event) => {
+
+//     })
+//   }
+// };
+
+// export { changeMessageStatus };
+
+function reply() {
+  const replyButton = document.querySelector('.reply-btn');
+  const replyForm = document.querySelector('.reply-form')
+
+  if (replyButton) {
+    replyButton.addEventListener('click', (event) => {
+      replyForm.classList.remove('hidden');
+      replyButton.classList.add('hidden');
+    })
+  }
+};
+
+export { reply };
