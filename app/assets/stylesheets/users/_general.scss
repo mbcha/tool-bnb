@@ -57,9 +57,9 @@
 }
 
 .user-my-listings {
-  margin: 0 auto;
   min-height: 70vh;
   height: auto;
+  margin: 0;
 }
 
 .listing-title {
@@ -93,21 +93,18 @@
 }
 
 .user-listings-form {
-  text-align: center;
-  color: #494949;
-  background-color: rgba(255, 255, 255, .9);
-  padding: 20px;
-  opacity: 0.9;
+  color: white;
+  opacity: 1;
   display: flex;
-  justify-content: center;
-  margin: 40px 0;
+  justify-content: space-around;
   align-items: center;
+  height: 70vh;
   border-radius: 10px;
   position: relative;
-  min-height: 70vh;
-  width: 600px;
-  height: auto;
-  margin: 0 auto;
+}
+
+.user-listing-form div {
+  height: 500px;
 }
 
 .delete-listing {
@@ -122,6 +119,26 @@
   padding-left: 55px;
 }
 
+.btn-primary {
+  margin: 0;
+}
+.add-listing-form {
+  text-align: center;
+  color: #494949;
+  background-color: rgba(255, 255, 255, .9);  display: flex;
+  padding: 20px;
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 40px 0;
+  align-items: center;
+  border-radius: 10px;
+  position: relative;
+  min-height: 60vh;
+  width: 600px;
+  height: auto;
+}
 
 // .users-container {
 //   background-color: white;

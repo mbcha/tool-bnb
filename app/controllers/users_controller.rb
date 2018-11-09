@@ -3,6 +3,14 @@ class UsersController < ApplicationController
     @user = current_user
     @booking = Booking.new
     authorize @user
+
+    if !@user.listings.nil?
+      @bookings = []
+      @user.listings.each do |listing|
+        @bookings << Booking.where(listing_id: listing.id)
+      end
+      @bookings.reject! { |booking| booking.empty? }
+    end
   end
 
   def destroy

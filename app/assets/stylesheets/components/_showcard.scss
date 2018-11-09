@@ -48,6 +48,7 @@ img{
 
 .book-button {
   background-color: #12CC60;
+  margin-left: 10px;
 }
 .edit-button {
   margin-left: 10px;
@@ -97,7 +98,7 @@ img{
 
 .flex-btn {
   display: flex;
-
+  justify-content: space-around;
 }
 
 #submit-button{

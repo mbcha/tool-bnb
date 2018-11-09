@@ -71,6 +71,15 @@
   color: black;
 }
 
+.listings-card-date {
+  width: 170px;
+  position: absolute;
+  top: 34%;
+  right: 5%;
+  color: black;
+  text-align: right;
+}
+
 .listings-card-btn {
   z-index: 2;
   color: white;
@@ -117,3 +126,4 @@
   margin-left: 10px;
   margin-bottom: 10px;
 }
+
