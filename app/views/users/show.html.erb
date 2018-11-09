@@ -166,6 +166,30 @@
               </div>
             </div>
 
+            <script>
+              function reply(event) {
+                // const allButtons = document.querySelectorAll('.reply-btn');
+                // const allForms = document.querySelectorAll('.reply-form');
+                // allButtons.classList.remove('hidden');
+                // allForms.classList.add('hidden');
+                  <%= puts "hello" %>
+
+                console.log(arguments);
+                const replyButton = event.target;
+
+                console.log(replyButton);
+
+                const replyForm = replyButton.parentElement.querySelector('.reply-form');
+
+                console.log(replyForm);
+                //replyButton.addEventListener('click', (event) => {
+                  console.log("click the button");
+                  replyForm.classList.remove('hidden');
+                  replyButton.classList.add('hidden');
+                //});
+              };
+            </script>
+
             <div class="messages">
               <div class="user-messages">
                 <h3>Sent to You</h3>
@@ -180,26 +204,26 @@
                   <p class="message-title">Title: <%= message.title %></p>
                   <p class="message-content">Content: <%= message.content %></p>
                   <p>Relates to: <%= link_to message.listing.category, listing_path(message.listing) %></p>
-                  <p class="btn btn-primary messages-btn">Mark as read</p>
-                  <p class="btn btn-primary messages-btn">Reply</p>
-                </div>
-                <div class="reply-form-unread hidden">
-                  <%= simple_form_for([message.listing, Message.new]) do |f| %>
-                  <%= f.input :title %>
-                  <%= f.input :content %>
-                  <a href="#" class="cancel-button-edit btn btn-primary">Cancel</a>
-                  <%= f.submit class: "btn btn-danger" %>
-                  <% end %>
+                  <!-- <p class="btn btn-primary messages-btn mark-as-read" onclick="markAsRead()">Mark as read</p> -->
+                  <p class="btn btn-primary messages-btn reply-btn" onclick="reply(event)">Reply</p>
+                  <div class="reply-form hidden">
+                    <%= simple_form_for([message.listing, Message.new]) do |f| %>
+                    <%= f.input :title %>
+                    <%= f.input :content %>
+                    <%= link_to "Cancel", user_path(current_user), class: "cancel-button-edit btn btn-primary" %>
+                    <%= f.submit class: "btn btn-danger" %>
+                    <% end %>
+                  </div>
                 </div>
                 <% else %>
                 <div class="message-read">
                   <p class="message-title">Title: <%= message.title %></p>
                   <p class="message-content">Content: <%= message.content %></p>
                   <p>Relates to: <%= link_to message.listing.category, listing_path(message.listing) %></p>
-                  <p class="btn btn-danger messages-btn">Reply</p>
+                  <p class="btn btn-danger messages-btn reply-btn" onclick="reply(event)">Reply</p>
                 </div>
 
-                <div class="reply-form-read hidden">
+                <div class="reply-form hidden">
                   <%= simple_form_for([message.listing, Message.new]) do |f| %>
                   <%= f.input :title %>
                   <%= f.input :content %>

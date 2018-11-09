@@ -27,6 +27,17 @@ class MessagesController < ApplicationController
     end
   end
 
+  def update
+    @message = Message.find(params[:id])
+    authorize @message
+    @message.update(message_params)
+    if @message.save
+      redirect_to user_path(current_user)
+    else
+      render :new
+    end
+  end
+
   def destroy
     @message = Message.find(params[:id])
     authorize @message
