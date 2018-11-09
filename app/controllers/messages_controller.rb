@@ -41,14 +41,22 @@ class MessagesController < ApplicationController
   def destroy
     @message = Message.find(params[:id])
     authorize @message
-    authorize @message
     @message.destroy
     redirect_to user_path(current_user)
+  end
+
+  def status
+    @message = Message.find(params[:id])
+    authorize @message
+    @message.status = "Read"
+    if @message.save
+      redirect_to user_path(current_user)
+    end
   end
 
   private
 
   def message_params
-    params.require(:message).permit(:title, :content, :sender, :listing_id)
+    params.require(:message).permit(:title, :content, :sender, :listing_id, :status)
   end
 end

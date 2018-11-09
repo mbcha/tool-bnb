@@ -168,44 +168,31 @@
 
             <script>
               function reply(event) {
-                // const allButtons = document.querySelectorAll('.reply-btn');
-                // const allForms = document.querySelectorAll('.reply-form');
-                // allButtons.classList.remove('hidden');
-                // allForms.classList.add('hidden');
-                  <%= puts "hello" %>
-
-                console.log(arguments);
                 const replyButton = event.target;
-
-                console.log(replyButton);
-
                 const replyForm = replyButton.parentElement.querySelector('.reply-form');
 
-                console.log(replyForm);
-                //replyButton.addEventListener('click', (event) => {
-                  console.log("click the button");
-                  replyForm.classList.remove('hidden');
-                  replyButton.classList.add('hidden');
-                //});
+                replyForm.classList.remove('hidden');
+                replyButton.classList.add('hidden');
               };
             </script>
 
             <div class="messages">
               <div class="user-messages">
-                <h3>Sent to You</h3>
+                <h3>SENT TO YOU</h3>
                 <% if @user.messages.empty? %>
                 <div class="btn btn-danger">
                   You have no messages.
                 </div>
                 <% end %>
                 <% @user.messages.each do |message| %>
-                <% if message.status = "Unread" %>
+                <% if message.status == "Unread" %>
                 <div class="message-unread">
                   <p class="message-title">Title: <%= message.title %></p>
                   <p class="message-content">Content: <%= message.content %></p>
                   <p>Relates to: <%= link_to message.listing.category, listing_path(message.listing) %></p>
-                  <!-- <p class="btn btn-primary messages-btn mark-as-read" onclick="markAsRead()">Mark as read</p> -->
-                  <p class="btn btn-primary messages-btn reply-btn" onclick="reply(event)">Reply</p>
+                  <%= link_to "Mark as read", status_message_path(message), class: "btn btn-primary messages-btn mark-as-read" %>
+
+                  <p class="btn btn-warning messages-btn reply-btn" onclick="reply(event)">Reply</p>
                   <div class="reply-form hidden">
                     <%= simple_form_for([message.listing, Message.new]) do |f| %>
                     <%= f.input :title %>
@@ -220,21 +207,21 @@
                   <p class="message-title">Title: <%= message.title %></p>
                   <p class="message-content">Content: <%= message.content %></p>
                   <p>Relates to: <%= link_to message.listing.category, listing_path(message.listing) %></p>
-                  <p class="btn btn-danger messages-btn reply-btn" onclick="reply(event)">Reply</p>
-                </div>
+                  <p class="btn btn-warning messages-btn reply-btn" onclick="reply(event)">Reply</p>
 
-                <div class="reply-form hidden">
-                  <%= simple_form_for([message.listing, Message.new]) do |f| %>
-                  <%= f.input :title %>
-                  <%= f.input :content %>
-                  <a href="#" class="cancel-button-edit btn btn-primary">Cancel</a>
-                  <%= f.submit "Reply", class: "btn btn-danger" %>
-                  <% end %>
+                  <div class="reply-form hidden">
+                    <%= simple_form_for([message.listing, Message.new]) do |f| %>
+                    <%= f.input :title %>
+                    <%= f.input :content %>
+                    <%= link_to "Cancel", user_path(current_user), class: "cancel-button-edit btn btn-primary" %>
+                    <%= f.submit "Reply", class: "btn btn-danger" %>
+                    <% end %>
+                  </div>
                 </div>
                 <% end %>
                 <% end %>
                 <% if Message.where(sender: current_user.id) %>
-                <h3>Sent by You</h3>
+                <h3>SENT BY YOU</h3>
                 <% end %>
                 <% Message.where(sender: current_user.id).each do |message| %>
                 <% if Message.where(sender: current_user.id).empty? %>
@@ -248,12 +235,7 @@
                   <p>Relates to: <%= link_to message.listing.category, listing_path(message.listing) %></p>
                 </div>
                 <% end %>
-
               </div>
-
             </div>
-
-
-
           </div>
         </div>

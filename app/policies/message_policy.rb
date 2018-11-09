@@ -16,4 +16,8 @@ class MessagePolicy < ApplicationPolicy
   def update?
     true
   end
+
+  def status?
+    true
+  end
 end
