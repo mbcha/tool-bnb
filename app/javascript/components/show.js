@@ -114,7 +114,7 @@ function openForms() {
       editForm.classList.add('hidden');
       listingPhoto.classList.remove('hidden');
     });
-    // stays on the bookings tab if redirect was passed ending in #bookings
+    // stays on the edit tab if redirect was passed ending in #edit
     $(document).ready(function () {
       if(window.location.href.indexOf("#edit") > -1) {
         editButton.classList.add('hidden');
