@@ -68,7 +68,12 @@
   position: absolute;
   top: 34%;
   left: 10%;
-  color: black;
+  color: #232C41;
+  text-decoration: none;
+  &:hover {
+    font-weight: bold;
+    text-decoration: none;
+  }
 }
 
 .listings-card-date {
