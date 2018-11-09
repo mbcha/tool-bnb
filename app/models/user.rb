@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :listings
   has_many :bookings
+  has_many :messages
 
   validates :name, presence: true
   validates :location, presence: true
