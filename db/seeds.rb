@@ -7,7 +7,7 @@ puts "Generating new seeds..."
 
 
 u = User.new(name: "Mike", location: "Amsterdam", email: "mikey@mikey.com", password: "testing")
-
+n = User.new(name: "Max", location: "Paris", email: "max@gmail.com", password: "testing")
 
 l = Listing.new(
   category: "Chain Saw",
@@ -20,7 +20,7 @@ l = Listing.new(
   category: "Lawn Mower",
   description: "Get your yard work done nice and easy. I dont pass on grass, instead I eat grass for breakfast, lunch, and dinner.",
   price: 20)
-l.user = u
+l.user = n
 l.save!
 
 l = Listing.new(
@@ -34,7 +34,7 @@ l = Listing.new(
   category: "Sludge Hammer",
   description: "Do you have something you need to nail? This hammer is HUGE!",
   price: 13)
-l.user = u
+l.user = n
 l.save!
 
 l = Listing.new(
@@ -48,7 +48,7 @@ l = Listing.new(
   category: "Power drill",
   description: "Over 50 different attachments! This drill is wireless and full of power",
   price: 33)
-l.user = u
+l.user = n
 l.save!
 
 l = Listing.new(
@@ -62,7 +62,7 @@ l = Listing.new(
   category: "Industial Floor Waxer",
   description: "Need to polish your office floors? Rent me!",
   price: 22)
-l.user = u
+l.user = n
 l.save!
 
 l = Listing.new(
