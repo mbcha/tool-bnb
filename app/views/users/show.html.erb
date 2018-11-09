@@ -96,7 +96,7 @@
         <% @user.bookings.each do |booking| %>
         <div class="listings-card">
           <% if current_user != booking.listing.user %>
-          <div class="listings-card-category">
+          <div class="bookings-card-category">
             BOOKED BY YOU
           </div>
           <% end %>
@@ -130,7 +130,7 @@
 
             <% @bookings.each do |booking| %>
             <div class="listings-card">
-              <div class="listings-card-category">
+              <div class="bookings-card-category">
                 YOUR TOOL WAS BOOKED
               </div>
               <div class="listings-card-description">
