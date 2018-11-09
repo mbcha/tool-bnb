@@ -126,7 +126,10 @@ function openForms() {
   const editButton = document.querySelector('.edit-button');
   const bookButton = document.querySelector('.book-button');
   const bookingForm = document.querySelector('.book-form');
+  const messageButton = document.querySelector('.message-button');
   const editForm = document.querySelector('.edit-form');
+  const messageForm = document.querySelector('.new-message-form');
+  const cancelButtonMessage = document.querySelector('.cancel-button-message');
   const cancelButtonEdit = document.querySelector('.cancel-button-edit');
   const cancelButtonBook = document.querySelector('.cancel-button-booking');
   const listingPhoto = document.querySelector('.listing-show-pic');
@@ -157,11 +160,26 @@ function openForms() {
       bookButton.classList.add('hidden');
       bookingForm.classList.remove('hidden');
       listingPhoto.classList.add('hidden');
+      messageForm.classList.add('hidden');
     });
     cancelButtonBook.addEventListener('click', (event) => {
       bookButton.classList.remove('hidden');
       bookingForm.classList.add('hidden');
       listingPhoto.classList.remove('hidden');
+      messageForm.classList.add('hidden');
+    });
+    messageButton.addEventListener('click', (event) => {
+      bookingForm.classList.add('hidden');
+      listingPhoto.classList.add('hidden');
+      messageButton.classList.add('hidden');
+      messageForm.classList.remove('hidden');
+    });
+    cancelButtonMessage.addEventListener('click', (event) => {
+      bookButton.classList.remove('hidden');
+      bookingForm.classList.add('hidden');
+      listingPhoto.classList.remove('hidden');
+      messageForm.classList.add('hidden');
+      messageButton.classList.remove('hidden');
     });
   }
 }
@@ -180,16 +198,4 @@ export { openForms };
 
 // export { changeMessageStatus };
 
-function reply() {
-  const replyButton = document.querySelector('.reply-btn');
-  const replyForm = document.querySelector('.reply-form')
 
-  if (replyButton) {
-    replyButton.addEventListener('click', (event) => {
-      replyForm.classList.remove('hidden');
-      replyButton.classList.add('hidden');
-    })
-  }
-};
-
-export { reply };
