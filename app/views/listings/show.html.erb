@@ -19,6 +19,7 @@
         <% if current_user && policy(@booking).create? && current_user != @listing.user %>
         <%= link_to "Back", :back, class: "btn btn-primary" %>
         <a href="#" class="book-button btn btn-success">Book</a>
+        <a href="#" class="book-button btn btn-success">Contact the owner</a>
         <% end %>
         <% if current_user && policy(@listing).update? %>
         <a href="#" class="edit-button btn btn-success">Edit</a>
@@ -90,6 +91,19 @@
           <%= f.input :price %>
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
+          <a href="#" class="cancel-button-edit btn btn-primary">Cancel</a>
+          <%= f.submit class: "btn btn-danger" %>
+          <% end %>
+        </div>
+      </div>
+
+
+
+      <div class="booking-edit-form">
+        <div class="edit-form">
+          <%= simple_form_for([@listing, Message.new]) do |f| %>
+          <%= f.input :title %>
+          <%= f.input :content %>
           <a href="#" class="cancel-button-edit btn btn-primary">Cancel</a>
           <%= f.submit class: "btn btn-danger" %>
           <% end %>
