@@ -161,6 +161,8 @@ function openForms() {
       bookingForm.classList.remove('hidden');
       listingPhoto.classList.add('hidden');
       messageForm.classList.add('hidden');
+      messageButton.classList.remove('hidden');
+
     });
     cancelButtonBook.addEventListener('click', (event) => {
       bookButton.classList.remove('hidden');
@@ -173,6 +175,7 @@ function openForms() {
       listingPhoto.classList.add('hidden');
       messageButton.classList.add('hidden');
       messageForm.classList.remove('hidden');
+      bookButton.classList.remove('hidden');
     });
     cancelButtonMessage.addEventListener('click', (event) => {
       bookButton.classList.remove('hidden');
