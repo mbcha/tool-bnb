@@ -140,6 +140,48 @@
   height: auto;
 }
 
+.user-messages {
+  color: #494949;
+  background-color: rgba(255, 255, 255, .9);  display: flex;
+  padding: 20px;
+  opacity: 0.9;
+  margin: 40px auto;
+  border-radius: 10px;
+  position: relative;
+  min-height: 60vh;
+  width: 70vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  h3 {
+    border-bottom: 1px solid gray;
+  }
+}
+.message-unread {
+  font-weight: bold;
+}
+
+.message-unread, .message-read {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.message-content {
+  flex-grow: 1;
+}
+.message-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.message-title {
+  width: 300px;
+}
+.messages-btn {
+  margin: 0 10px;
+}
+
 // .users-container {
 //   background-color: white;
 //   opacity: 0.9;

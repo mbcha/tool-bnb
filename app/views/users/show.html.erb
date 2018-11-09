@@ -2,12 +2,13 @@
 
   <div class="main-container">
     <div class="tabs">
-      <a href="#" class="tab tab-first active">Profile</a>
+      <a href="#" class="tab tab-first">Profile</a>
       <a href="#" class="tab tab-second">Advertised Tools</a>
+      <a href="#" class="tab tab-third active">Messages</a>
       <a href="#" class="tab tab-last">Bookings</a>
     </div>
 
-    <div class="user-details">
+    <div class="user-details hidden">
       <div class="user-info">
         <h2><%= @user.name.capitalize %> </h2>
         <% if @user.photo.url.nil? %>
@@ -147,22 +148,88 @@
                   </div>
                   <div id="confirmation-action" class="booking-status">
                     <% if booking[0].status.upcase == 'PENDING' %>
-                      <%= form_for(booking[0]) do |f| %>
-                        <%= f.hidden_field :status, value: 'confirmed' %>
-                        <%= f.submit :Confirm, class: 'status-btn btn btn-success', insert_html: { id: 'confirmation-action' } %>
-                      <% end %>
-                      <%= form_for(booking[0]) do |f| %>
-                        <%= f.hidden_field :status, value: 'declined' %>
-                        <%= f.submit :Decline, class: 'status-btn btn btn-danger', insert_html: { id: 'confirmation-action' } %>
-                      <% end %>
+                    <%= form_for(booking[0]) do |f| %>
+                    <%= f.hidden_field :status, value: 'confirmed' %>
+                    <%= f.submit :Confirm, class: 'status-btn btn btn-success', insert_html: { id: 'confirmation-action' } %>
+                    <% end %>
+                    <%= form_for(booking[0]) do |f| %>
+                    <%= f.hidden_field :status, value: 'declined' %>
+                    <%= f.submit :Decline, class: 'status-btn btn btn-danger', insert_html: { id: 'confirmation-action' } %>
+                    <% end %>
                     <% end %>
                   </div>
                   <div class="listings-card-price">
                     €<%= booking[0].total_price.to_f.round(2) %>
                   </div>
                 </div>
-              <% end %>
+                <% end %>
+              </div>
             </div>
+
+            <div class="messages">
+              <div class="user-messages">
+                <h3>Sent to You</h3>
+                <% if @user.messages.empty? %>
+                <div class="btn btn-danger">
+                  You have no messages.
+                </div>
+                <% end %>
+                <% @user.messages.each do |message| %>
+                <% if message.status = "Unread" %>
+                <div class="message-unread">
+                  <p class="message-title">Title: <%= message.title %></p>
+                  <p class="message-content">Content: <%= message.content %></p>
+                  <p>Relates to: <%= link_to message.listing.category, listing_path(message.listing) %></p>
+                  <p class="btn btn-primary messages-btn">Mark as read</p>
+                  <p class="btn btn-primary messages-btn">Reply</p>
+                </div>
+                <div class="reply-form-unread hidden">
+                  <%= simple_form_for([message.listing, Message.new]) do |f| %>
+                  <%= f.input :title %>
+                  <%= f.input :content %>
+                  <a href="#" class="cancel-button-edit btn btn-primary">Cancel</a>
+                  <%= f.submit class: "btn btn-danger" %>
+                  <% end %>
+                </div>
+                <% else %>
+                <div class="message-read">
+                  <p class="message-title">Title: <%= message.title %></p>
+                  <p class="message-content">Content: <%= message.content %></p>
+                  <p>Relates to: <%= link_to message.listing.category, listing_path(message.listing) %></p>
+                  <p class="btn btn-primary messages-btn">Reply</p>
+                </div>
+
+                <div class="reply-form-read hidden">
+                  <%= simple_form_for([message.listing, Message.new]) do |f| %>
+                  <%= f.input :title %>
+                  <%= f.input :content %>
+                  <a href="#" class="cancel-button-edit btn btn-primary">Cancel</a>
+                  <%= f.submit "Reply", class: "btn btn-danger" %>
+                  <% end %>
+                </div>
+                <% end %>
+                <% end %>
+                <% if Message.where(sender: current_user.id) %>
+                <h3>Sent by You</h3>
+                <% end %>
+                <% Message.where(sender: current_user.id).each do |message| %>
+                <% if Message.where(sender: current_user.id).empty? %>
+                <div class="btn btn-danger">
+                  You haven't sent any messages.
+                </div>
+                <% end %>
+                <div class="message-tabs">
+                  <p class="message-title">Title: <%= message.title %></p>
+                  <p class="message-content">Content: <%= message.content %></p>
+                  <p>Relates to: <%= link_to message.listing.category, listing_path(message.listing) %></p>
+                </div>
+                <% end %>
+
+              </div>
+
+            </div>
+
+
+
           </div>
         </div>
-      </div>

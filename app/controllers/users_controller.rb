@@ -11,6 +11,8 @@ class UsersController < ApplicationController
       end
       @bookings.reject! { |booking| booking.empty? }
     end
+
+    Message.where(sender: current_user.id)
   end
 
   def destroy
