@@ -1,10 +1,12 @@
 function changeTabs() {
   const firstTab = document.querySelector('.tab-first');
   const secondTab = document.querySelector('.tab-second');
+  const thirdTab = document.querySelector('.tab-third');
   const lastTab = document.querySelector('.tab-last');
   const userDetails = document.querySelector('.user-details');
   const userListings = document.querySelector('.user-my-listings');
   const userBookings = document.querySelector('.user-my-bookings');
+  const userMessages = document.querySelector('.messages')
   const addForm = document.querySelector('.user-listings-form');
   const addButton = document.querySelector('.new-listing-btn');
   const cancelButton = document.querySelector('.cancel-new')
@@ -19,6 +21,8 @@ function changeTabs() {
         userDetails.classList.add('hidden');
         secondTab.classList.remove('active');
         userListings.classList.add('hidden');
+        thirdTab.classList.remove('active');
+        userMessages.classList.add('hidden');
         lastTab.classList.add('active');
         userBookings.classList.remove('hidden');
         addForm.classList.add('hidden');
@@ -32,6 +36,8 @@ function changeTabs() {
         userDetails.classList.add('hidden');
         secondTab.classList.add('active');
         userListings.classList.remove('hidden');
+        thirdTab.classList.remove('active');
+        userMessages.classList.add('hidden');
         lastTab.classList.remove('active');
         userBookings.classList.add('hidden');
         addForm.classList.add('hidden');
@@ -43,6 +49,8 @@ function changeTabs() {
       userDetails.classList.remove('hidden');
       secondTab.classList.remove('active');
       userListings.classList.add('hidden');
+      thirdTab.classList.remove('active');
+      userMessages.classList.add('hidden');
       lastTab.classList.remove('active');
       userBookings.classList.add('hidden');
       addForm.classList.add('hidden');
@@ -53,6 +61,8 @@ function changeTabs() {
       userDetails.classList.add('hidden');
       secondTab.classList.add('active');
       userListings.classList.remove('hidden');
+      thirdTab.classList.remove('active');
+      userMessages.classList.add('hidden');
       lastTab.classList.remove('active');
       userBookings.classList.add('hidden');
       addForm.classList.add('hidden');
@@ -63,8 +73,22 @@ function changeTabs() {
       userDetails.classList.add('hidden');
       secondTab.classList.remove('active');
       userListings.classList.add('hidden');
+      thirdTab.classList.remove('active');
+      userMessages.classList.add('hidden');
       lastTab.classList.add('active');
       userBookings.classList.remove('hidden');
+      addForm.classList.add('hidden');
+
+    });
+    thirdTab.addEventListener('click', (event) => {
+      firstTab.classList.remove('active');
+      userDetails.classList.add('hidden');
+      secondTab.classList.remove('active');
+      userListings.classList.add('hidden');
+      thirdTab.classList.add('active');
+      userMessages.classList.remove('hidden');
+      lastTab.classList.remove('active');
+      userBookings.classList.add('hidden');
       addForm.classList.add('hidden');
 
     });
@@ -75,6 +99,8 @@ function changeTabs() {
       if (!userListings.classList.contains('hidden')) {
         userListings.classList.toggle('hidden');
       }
+      thirdTab.classList.remove('active');
+      userMessages.classList.add('hidden');
       lastTab.classList.remove('active');
       userBookings.classList.add('hidden');
       addForm.classList.toggle('hidden');
@@ -84,6 +110,8 @@ function changeTabs() {
       userDetails.classList.add('hidden');
       secondTab.classList.add('active');
       userListings.classList.remove('hidden');
+      thirdTab.classList.remove('active');
+      userMessages.classList.add('hidden');
       lastTab.classList.remove('active');
       userBookings.classList.add('hidden');
       addForm.classList.add('hidden');
