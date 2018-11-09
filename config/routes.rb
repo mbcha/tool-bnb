@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :destroy]
   resources :bookings, only: [:update]
+
+  get 'status/:id', to: 'messages#status', as: :status_message
+
   as :user do
     get 'users', :to => 'users#show', :as => :user_root # Rails 3
   end
