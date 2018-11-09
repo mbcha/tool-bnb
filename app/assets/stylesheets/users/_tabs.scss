@@ -15,11 +15,16 @@
   font-size: 50px;
   font-weight: bold;
   text-shadow: 2px 2px black;
+  transition: all 0.3s;
 }
 
 .tab.active {
   color: #FAA916;
   opacity: 0.9;
+}
+.tab:hover {
+  color: #FAA916;
+  opacity: 0.5;
 }
 
 .tab-first {
